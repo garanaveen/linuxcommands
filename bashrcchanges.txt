@@ -1,0 +1,10 @@
+
+#Add following lines to your .bashrc
+if [ -f ~/linuxcommands/my_bashrc ]; then
+    source ~/linuxcommands/my_bashrc
+fi
+
+if [ -f ~/linuxcommands/my_aliases ]; then
+    source ~/linuxcommands/my_aliases
+fi
+
