@@ -1,0 +1,16 @@
+
+#Personal
+alias q='fold -w 80 -s ~/tmp/a | less'
+alias qaa='fold -w 50 -s ~/tmp/aa | less'
+alias qaaa='fold -w 50 -s ~/tmp/aaa | less'
+alias b='cd ..'
+alias bb='cd ../..'
+alias bbb='cd ../../..'
+alias bbbb='cd ../../../..'
+alias bbbbb='cd ../../../../../'
+alias 4b='cd ../../../../'
+alias 5b='cd ../../../../../'
+alias 6b='cd ../../../../../../'
+alias 7b='cd ../../../../../../../'
+
+

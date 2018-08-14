@@ -4,17 +4,12 @@ function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 export EDITOR="/usr/bin/vim"
 export VISUAL="/usr/bin/vim"
 
-y () {   cd /home/ng81401/workspace; }
-
-
 set editing-mode vi
 set keymap vi-command
 
 set -o vi
 
-
 bind -x '"\C-l": clear'
-
 
 function countdown(){
    date1=$((`date +%s` + $1)); 
@@ -23,6 +18,7 @@ function countdown(){
      sleep 0.1
    done
 }
+
 function stopwatch(){
   date1=`date +%s`; 
    while true; do 
@@ -37,5 +33,4 @@ weather()
 { 
    curl -s "wttr.in/dsm"
 }
-
 
