@@ -1,5 +1,6 @@
 
-#Add following lines to your .bashrc
+#The following lines need to be added to source custom bashrc and aliases to .bashrc 
+#Start====================
 if [ -f ~/linuxcommands/my_bashrc ]; then
     source ~/linuxcommands/my_bashrc
 fi
@@ -7,4 +8,6 @@ fi
 if [ -f ~/linuxcommands/my_aliases ]; then
     source ~/linuxcommands/my_aliases
 fi
+#End======================
+
 
