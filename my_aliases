@@ -14,3 +14,7 @@ alias 6b='cd ../../../../../../'
 alias 7b='cd ../../../../../../../'
 
 
+
+#Git aliases,
+alias gitlog='git log --pretty=oneline'
+
