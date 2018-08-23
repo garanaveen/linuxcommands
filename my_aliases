@@ -17,4 +17,4 @@ alias 7b='cd ../../../../../../../'
 
 #Git aliases,
 alias gitlog='git log --pretty=oneline'
-
+alias gitkraken='gitkraken -p .'
