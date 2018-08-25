@@ -1,28 +1,39 @@
 #!/bin/bash
 
-function setbashrcfile()
+#Default in Linux
+MACHINETYPE=Linux
+BASHRCFILE=${HOME}/.bashrc
+PLATFORM_SPECIFIC_ALIASES=linux_aliases
+
+function setmachinetype()
 {
    unameOut="$(uname -s)"
    case "${unameOut}" in
-       Linux*)     machine=Linux;;
-       Darwin*)    machine=Mac;;
-       *)          machine=Linux #Default to Linux
+       Linux*)     MACHINETYPE=Linux;;
+       Darwin*)    MACHINETYPE=Mac;;
+       *)          MACHINETYPE=Linux #Default to Linux
    esac
-   echo "This is \"${machine}\" os"
+   echo "This is \"${MACHINETYPE}\" os"
 
-
-   if [ "${machine}" == "Mac" ]
-   then
-      BASHRCFILE=${HOME}/.bash_profile
-   fi
 }
 
-#Default in Linux
-BASHRCFILE=${HOME}/.bashrc
+setmachinetype
 
-setbashrc
+if [ "${MACHINETYPE}" == "Mac" ]
+then
+    BASHRCFILE=${HOME}/.bash_profile
+    PLATFORM_SPECIFIC_ALIASES=mac_aliases
+fi
+
 
 echo "Updating ${BASHRCFILE} file to contain custom bashrc and aliases"
 
+#TODO : Replace this cat with echo statements like PLATFORM_SPECIFIC_ALIASES.
 cat  bashrcchanges.txt >> ${BASHRCFILE}
+
+echo "" >> ${BASHRCFILE}
+echo "if [ -f ~/linuxcommands/${PLATFORM_SPECIFIC_ALIASES} ]; then" >> ${BASHRCFILE}
+echo "    source ~/linuxcommands/mac_aliases" >> ${BASHRCFILE}
+echo "fi" >> ${BASHRCFILE}
+echo "" >> ${BASHRCFILE}
 

@@ -1,0 +1,2 @@
+#Aliases that are specific to linux,
+alias gitkraken='gitkraken -p .'

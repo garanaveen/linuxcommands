@@ -1,0 +1,2 @@
+#Aliases that are specific to mac
+alias gitkraken='/Applications/GitKraken.app/Contents/MacOS/GitKraken -p $(pwd)'
