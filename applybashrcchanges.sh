@@ -33,7 +33,7 @@ cat  bashrcchanges.txt >> ${BASHRCFILE}
 
 echo "" >> ${BASHRCFILE}
 echo "if [ -f ~/linuxcommands/${PLATFORM_SPECIFIC_ALIASES} ]; then" >> ${BASHRCFILE}
-echo "    source ~/linuxcommands/mac_aliases" >> ${BASHRCFILE}
+echo "    source ~/linuxcommands/${PLATFORM_SPECIFIC_ALIASES}" >> ${BASHRCFILE}
 echo "fi" >> ${BASHRCFILE}
 echo "" >> ${BASHRCFILE}
 
