@@ -1,0 +1,14 @@
+Adding ssh keys for github.com,
+-------------------------------
+https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+eval "$(ssh-agent -s)"
+ssh-add -K ~/.ssh/id_rsa
+pbcopy < ~/.ssh/id_rsa.pub
+
+
+git config --global user.email "email@example.com"
+git config --global user.email
+
+git config --global user.name "username"
+git config --global user.name
