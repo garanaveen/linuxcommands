@@ -12,3 +12,14 @@ git config --global user.email
 
 git config --global user.name "username"
 git config --global user.name
+
+------------------------------------------------------------------------------
+
+How to install iTerm2 on MacOs?
+-------------------------------
+brew cask install iterm2
+https://www.iterm2.com/downloads.html
+https://sourabhbajaj.com/mac-setup/iTerm/
+
+------------------------------------------------------------------------------
+
