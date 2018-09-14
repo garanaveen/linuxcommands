@@ -23,3 +23,6 @@ https://sourabhbajaj.com/mac-setup/iTerm/
 
 ------------------------------------------------------------------------------
 
+
+How to add ssh keys for multiple github accounts?
+https://gist.github.com/jexchan/2351996
