@@ -1,0 +1,22 @@
+https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
+
+Give path as ~/.ssh/id_rsa-garanaveen
+ssh-keygen -t rsa -b 4096 -C "garanaveen@gmail.com"
+eval "$(ssh-agent -s)"
+Mac,
+ssh-add -K ~/.ssh/id_rsa
+Linux,
+ssh-add ~/.ssh/id_rsa
+CopyToClipboard,
+pbcopy < ~/.ssh/id_rsa.pub
+
+Verify if the keys added are correct,
+ssh-add -l -E md5
+
+
+git config --local user.email "garanaveen@gmail.com"
+git config --local user.email
+
+git config --local user.name "garanaveen"
+git config --local user.name
+

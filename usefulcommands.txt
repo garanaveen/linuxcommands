@@ -6,6 +6,9 @@ eval "$(ssh-agent -s)"
 ssh-add -K ~/.ssh/id_rsa
 pbcopy < ~/.ssh/id_rsa.pub
 
+Verify if the keys added are correct,
+ssh-add -l -E md5
+
 
 git config --global user.email "email@example.com"
 git config --global user.email
