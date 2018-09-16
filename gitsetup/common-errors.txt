@@ -1,0 +1,12 @@
+Logmeins-MacBook-Pro:linuxcommands logmeingn$ git push origin master
+remote: Permission to garanaveen/linuxcommands.git denied to logmeingn.
+fatal: unable to access 'https://github.com/garanaveen/linuxcommands.git/': The requested URL returned error: 403
+
+Check "git remote -v" to make sure the fetch and push are ssh and not https.
+
+https://help.github.com/articles/changing-a-remote-s-url/#switching-remote-urls-from-https-to-ssh
+
+
+-------------------------------------------------------------------------------------------------
+
+
