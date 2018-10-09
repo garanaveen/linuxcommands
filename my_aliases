@@ -22,3 +22,4 @@ alias gits='git status'
 alias ff='~/linuxcommands/scripts/findwithname.sh'
 
 
+alias r='reset'
