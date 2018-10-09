@@ -34,3 +34,8 @@ weather()
    curl -s "wttr.in/dsm"
 }
 
+#If ack-grep is installed make an alias
+which ack-grep
+if [ 0 == $? ]; then
+   alias ack='ack-grep'
+fi
