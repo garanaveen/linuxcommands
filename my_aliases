@@ -21,5 +21,8 @@ alias gits='git status'
 #Speedy aliases,
 alias ff='~/linuxcommands/scripts/findwithname.sh'
 
-
 alias r='reset'
+
+alias gg='source ~/linuxcommands/scripts/grepquicknotes.sh'
+
+
