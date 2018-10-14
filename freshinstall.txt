@@ -6,3 +6,11 @@ sudo apt-get install nautilus
 Q : Ctrl+s doesn't save the file in QtCreator
 A : Check "Pass Control Key" in QtCreator FakeVim mode.
 
+-------------------------------------
+Wifi Drivers for RealTek wifi adapter for Ubuntu.
+ ANEWKODI 600Mbps USB WiFi Adapter USB Wireless Adapter Daul Band 2.4GHz/5GHz 433Mbps 802.11 ac/a/b/g/n Wireless Adapter for Desktop/Laptop/PC, Support Windows 10/8/7/Vista/XP/2000/Mac Os 
+ Link: http://a.co/d/c4Mdykq 
+origin	https://github.com/abperiasamy/rtl8812AU_8821AU_linux.git (fetch)
+
+b664e12191c91ea92f1bedefa98be40960455f44
+-------------------------------------
