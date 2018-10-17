@@ -1,8 +1,0 @@
-
-sudo apt-get install ack-grep
-sudo apt-get install kruler
-sudo apt-get install nautilus
-
-Q : Ctrl+s doesn't save the file in QtCreator
-A : Check "Pass Control Key" in QtCreator FakeVim mode.
-
