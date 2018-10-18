@@ -11,3 +11,9 @@ du -cks * | sort -rn | head
 https://www.cyberciti.biz/faq/how-do-i-find-the-largest-filesdirectories-on-a-linuxunixbsd-filesystem/
 
 ------------------------------------------------------------------------------
+
+Extract 123 from "HelloWorld.123"
+"grep -o" outputs only the matching pattern skipping the rest of the line.
+echo "HelloWorld.123" | grep -o "1.*$"
+
+------------------------------------------------------------------------------
