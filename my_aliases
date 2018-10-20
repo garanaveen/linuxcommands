@@ -17,6 +17,7 @@ alias 7b='cd ../../../../../../../'
 alias gitlog='git log --pretty=oneline --graph'
 alias gitkraken='gitkraken -p .'
 alias gits='git status'
+alias gitr='git remote -v'
 
 #Speedy aliases,
 alias ff='~/linuxcommands/scripts/findwithname.sh'
