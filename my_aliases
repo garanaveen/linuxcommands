@@ -26,3 +26,4 @@ alias r='reset'
 alias gg='source ~/linuxcommands/scripts/grepquicknotes.sh'
 
 
+alias gitinc='git fetch && git log ..origin/master'
