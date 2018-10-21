@@ -1,6 +1,3 @@
 alias ff
 
 
-http://sourabhbajaj.com/mac-setup/Vim/
-
-
