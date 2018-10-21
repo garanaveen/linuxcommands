@@ -18,6 +18,7 @@ alias gitlog='git log --pretty=oneline --graph'
 alias gitkraken='gitkraken -p .'
 alias gits='git status'
 alias gitr='git remote -v'
+alias gitinc='git fetch && git log ..origin/master'
 
 #Speedy aliases,
 alias ff='~/linuxcommands/scripts/findwithname.sh'
@@ -27,4 +28,3 @@ alias r='reset'
 alias gg='source ~/linuxcommands/scripts/grepquicknotes.sh'
 
 
-alias gitinc='git fetch && git log ..origin/master'
