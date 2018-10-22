@@ -39,3 +39,6 @@ which ack-grep
 if [ 0 == $? ]; then
    alias ack='ack-grep'
 fi
+
+export PATH=$PATH:$HOME/linuxcommands/scripts/
+
