@@ -1,3 +1,10 @@
 alias ff
 
+Edit such that gg can take parameters that are passed as parameters to grep
+scripts/grepquicknotes.sh
+Like you should be able to specify more parameters to grep like 
+
+gg set-url --exclude-dir=.git #This should exclude the director ".git"
+
+
 
