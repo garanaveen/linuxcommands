@@ -5,14 +5,14 @@ Linux,
 ssh-keygen -t rsa -b 4096 -C "garanaveen@gmail.com"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa-garanaveen
-pbcopy < ~/.ssh/id_rsa.pub
+pbcopy < ~/.ssh/id_rsa-garanaveen.pub
 
 Mac,
-/Users/garanaveen/.ssh/id_rsa-garanaveen
+/Users/logmeingn/.ssh/id_rsa-garanaveen
 ssh-keygen -t rsa -b 4096 -C "garanaveen@gmail.com"
 eval "$(ssh-agent -s)"
-ssh-add -K /Users/garanaveen/.ssh/id_rsa-garanaveen
-pbcopy < ~/.ssh/id_rsa.pub
+ssh-add -K /Users/logmeingn/.ssh/id_rsa-garanaveen
+pbcopy < ~/.ssh/id_rsa-garanaveen.pub
 
 
 Verify if the keys added are correct,
