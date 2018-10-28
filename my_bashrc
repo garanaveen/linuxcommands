@@ -42,3 +42,9 @@ fi
 
 export PATH=$PATH:$HOME/linuxcommands/scripts/
 
+cdd()
+{
+DIR=`dirname $1`
+echo "${DIR}"
+cd ${DIR}
+}
