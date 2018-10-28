@@ -8,3 +8,6 @@ gg set-url --exclude-dir=.git #This should exclude the director ".git"
 
 
 
+
+Sun Oct 28 11:15:15 CDT 2018
+See where cdd alias is added in *bashrc. I remember defining a bash method for it.
