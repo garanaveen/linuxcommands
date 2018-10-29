@@ -10,3 +10,23 @@ https://help.github.com/articles/changing-a-remote-s-url/#switching-remote-urls-
 -------------------------------------------------------------------------------------------------
 
 
+git push -u origin master,
+ssh: connect to host github.com port 22: Connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Solution: 
+https://askubuntu.com/questions/610940/ssh-connect-to-host-github-com-port-22-connection-refused
+
+Have you tried using port 443, and adding ssh. subdomain prefix?
+This command will test it. You should get an error since a shell is not supported.
+ssh -T -p 443 git@ssh.github.com
+Then you can use a full URL to specify the project path, see Stack Overflow answer for details:
+ssh://git@ssh.github.com:443/garanaveen/linuxcommands.git
+ssh://git@ssh.github.com:443/garanaveen/myreference.git
+
+-------------------------------------------------------------------------------------------------
+
+
