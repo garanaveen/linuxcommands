@@ -42,3 +42,8 @@ fi
 
 export PATH=$PATH:$HOME/linuxcommands/scripts/
 
+#Use cdd when you want to change to directory of the given filepath. This way you can avoid deleting the file name at the end.
+cdd() {
+cd `dirname $1`
+}
+
