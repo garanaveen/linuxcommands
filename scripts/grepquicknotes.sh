@@ -13,7 +13,7 @@ CONTEXT_OF_TWO_LINES="-C2"
 
 FOLLOW_LINKS_TOO="-L"
 
-find ${FOLLOW_LINKS_TOO} ${HOME} -maxdepth 3 -name usefulcommands.txt -print |xargs grep ${DONT_PRINT_FILENAME} $1 ${CONTEXT_OF_TWO_LINES}
+find ${FOLLOW_LINKS_TOO} ${HOME} -maxdepth 3 -name usefulcommands.txt -print |xargs grep ${DONT_PRINT_FILENAME} "$1" ${CONTEXT_OF_TWO_LINES}
 
 #-------------------------------------
 
