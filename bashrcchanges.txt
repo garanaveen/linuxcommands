@@ -8,6 +8,8 @@ fi
 if [ -f ~/linuxcommands/my_aliases ]; then
     source ~/linuxcommands/my_aliases
 fi
+
+if [ -f ~/linuxcommands/git_aliases ]; then
+    source ~/linuxcommands/git_aliases
+fi
 #End======================
-
-
