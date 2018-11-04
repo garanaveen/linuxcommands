@@ -29,6 +29,4 @@ alias r='reset'
 alias gg='source ~/linuxcommands/scripts/grepquicknotes.sh'
 
 
-cdd() {
-cd `dirname $1`
-}
+alias vimt='vim *.tex'
