@@ -48,3 +48,5 @@ DIR=`dirname $1`
 echo "${DIR}"
 cd ${DIR}
 }
+
+export PS1='\h:$PWD\$'

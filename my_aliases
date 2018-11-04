@@ -29,3 +29,4 @@ alias r='reset'
 alias gg='source ~/linuxcommands/scripts/grepquicknotes.sh'
 
 
+alias vimt='vim *.tex'
