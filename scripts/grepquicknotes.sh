@@ -17,7 +17,7 @@ find ${FOLLOW_LINKS_TOO} ${HOME} -maxdepth 3 -name usefulcommands.txt -print |xa
 
 #-------------------------------------
 
-echo "Press any key........."
+echo "Press enter key........."
 read
 
 ${GREP_COMMAND} $1 ${HOME}/linuxcommands/ -r -C3 -i --no-filename
