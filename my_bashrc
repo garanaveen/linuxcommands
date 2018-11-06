@@ -1,4 +1,4 @@
-
+#!/bin/bash
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 export EDITOR="/usr/bin/vim"
@@ -49,4 +49,4 @@ echo "${DIR}"
 cd ${DIR}
 }
 
-export PS1='\h:$PWD\$'
+#export PS1='\h:$PWD\$'
