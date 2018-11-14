@@ -23,6 +23,8 @@ alias gitpush='git push -u origin master'
 
 #Speedy aliases,
 alias ff='~/linuxcommands/scripts/findwithname.sh'
+alias findallfiles='find . -type f'
+alias findalldirs='find . -type d'
 
 alias r='reset'
 
