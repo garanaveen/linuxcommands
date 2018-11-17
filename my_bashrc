@@ -1,5 +1,9 @@
+#!/bin/bash
 
+source utils.sh
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+
+
 
 export EDITOR="/usr/bin/vim"
 export VISUAL="/usr/bin/vim"
@@ -51,4 +55,3 @@ echo "${DIR}"
 cd ${DIR}
 }
 
-export PS1='\h:$PWD\$'

@@ -1,21 +1,9 @@
 #!/bin/bash
 
-#Default in Linux
-MACHINETYPE=Linux
+source utils.sh
+
 BASHRCFILE=${HOME}/.bashrc
 PLATFORM_SPECIFIC_ALIASES=linux_aliases
-
-function setmachinetype()
-{
-   unameOut="$(uname -s)"
-   case "${unameOut}" in
-       Linux*)     MACHINETYPE=Linux;;
-       Darwin*)    MACHINETYPE=Mac;;
-       *)          MACHINETYPE=Linux #Default to Linux
-   esac
-   echo "This is \"${MACHINETYPE}\" os"
-
-}
 
 setmachinetype
 
