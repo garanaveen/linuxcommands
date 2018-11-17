@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source utils.sh
+
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 
@@ -55,3 +56,4 @@ echo "${DIR}"
 cd ${DIR}
 }
 
+#export PS1='\h:$PWD\$'

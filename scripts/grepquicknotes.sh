@@ -13,11 +13,11 @@ CONTEXT_OF_TWO_LINES="-C2"
 
 FOLLOW_LINKS_TOO="-L"
 
-find ${FOLLOW_LINKS_TOO} ${HOME} -maxdepth 3 -name usefulcommands.txt -print |xargs grep ${DONT_PRINT_FILENAME} $1 ${CONTEXT_OF_TWO_LINES}
+find ${FOLLOW_LINKS_TOO} ${HOME} -maxdepth 3 -name usefulcommands.txt -print |xargs grep ${DONT_PRINT_FILENAME} "$1" ${CONTEXT_OF_TWO_LINES}
 
 #-------------------------------------
 
-echo "Press any key........."
+echo "Press enter key........."
 read
 
 ${GREP_COMMAND} $1 ${HOME}/linuxcommands/ -r -C3 -i --no-filename
