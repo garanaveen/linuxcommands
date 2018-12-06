@@ -13,5 +13,7 @@ Mac:
 my_aliases - custom aliases to shortcut a lot of commands.
 
 my_bashrc - custom functions defined for convenience.
+git_aliases - custom aliases for git.
 
 git_aliases - custom aliases for git.
+

@@ -6,4 +6,5 @@ Like you should be able to specify more parameters to grep like
 
 gg set-url --exclude-dir=.git #This should exclude the director ".git"
 
+Implement vimff that takes a parameters as the fileName and opens the first occurance of the file.
 
