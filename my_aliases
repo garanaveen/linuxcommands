@@ -23,6 +23,7 @@ alias gitpush='git push -u origin master'
 
 #Speedy aliases,
 alias ff='~/linuxcommands/scripts/findwithname.sh'
+alias vimff='~/linuxcommands/scripts/vimfindfirstoccurance.sh'
 alias findallfiles='find . -type f'
 alias findalldirs='find . -type d'
 
