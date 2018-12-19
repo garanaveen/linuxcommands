@@ -1,2 +1,3 @@
 set ic is
 set hls
+set shiftwidth=3
