@@ -1,1 +1,7 @@
+#New types,
 --type-set=ts=.ts
+--type-set=csv=.csv
+
+
+#Directories to be ignored
+--ignore-dir=jdx
