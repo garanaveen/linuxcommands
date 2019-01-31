@@ -8,3 +8,5 @@ gg set-url --exclude-dir=.git #This should exclude the director ".git"
 
 Implement vimff that takes a parameters as the fileName and opens the first occurance of the file.
 
+
+A script to check if there are any incoming changes in the all the repos by recursively going in to all the subdirectories.

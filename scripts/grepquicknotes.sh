@@ -22,6 +22,9 @@ read
 
 ${GREP_COMMAND} $1 ${HOME}/linuxcommands/ -r -C3 -i --no-filename
 ${GREP_COMMAND} $1 ${HOME}/myreference/ -r -C3 -i --no-filename
-${GREP_COMMAND} $1 ${HOME}/dl/ -r -C3 -i --no-filename
+
+if [ $MACHINETYPE != "Mac" ]; then
+   ${GREP_COMMAND} $1 ${HOME}/dl/ -r -C3 -i --no-filename
+fi
 
 
