@@ -6,7 +6,7 @@ git config --global alias.ci commit
 git config --global alias.st status
 git config --global alias.re remote -v
 
-
+git config --global alias.unstage 'reset --'
 
 #If the alias is supposed to be a external command.
 git config --global alias.visual '!gitk'
