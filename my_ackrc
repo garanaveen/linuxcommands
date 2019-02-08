@@ -1,6 +1,7 @@
 #New types,
 --type-set=ts=.ts
 --type-set=csv=.csv
+--type-set=txt=.txt
 
 
 #Directories to be ignored
