@@ -28,3 +28,6 @@ if [ $MACHINETYPE != "Mac" ]; then
 fi
 
 
+echo "Press enter key........."
+${GREP_COMMAND} $1 ${HOME}/ds/ -r -C3 -i --no-filename
+${GREP_COMMAND} $1 ${HOME}/dl/ -r -C3 -i --no-filename
