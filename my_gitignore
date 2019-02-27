@@ -1,0 +1,6 @@
+#Some of the frequently used patterns,
+CMakeLists.txt.user.*
+**.user
+build*/
+.DS_Store
+tags

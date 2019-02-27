@@ -1,0 +1,5 @@
+--recurse=yes
+--exclude=.git
+--exclude=build/*
+--exclude=CMakeLists.txt.user
+--exclude=thirdparty/*
