@@ -1,3 +1,10 @@
 set ic is
 set hls
 set shiftwidth=3
+
+"If CurtineIncSw.vim plugin is installed,
+map <F4> :call CurtineIncSw()<CR>
+
+
+set tags=./tags;/
+

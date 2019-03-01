@@ -6,3 +6,4 @@
 
 #Directories to be ignored
 --ignore-dir=jdx
+--ignore-file=is:tags
