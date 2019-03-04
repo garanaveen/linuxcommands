@@ -10,3 +10,6 @@ Implement vimff that takes a parameters as the fileName and opens the first occu
 
 
 A script to check if there are any incoming changes in the all the repos by recursively going in to all the subdirectories.
+
+Take a look at allscripts134.tar.gz on drive.
+
