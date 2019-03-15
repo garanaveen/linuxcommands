@@ -12,5 +12,5 @@ find .  \
 > cscope.files
 
 
-#cscope -b -q -k
+cscope -b -q -k
 
