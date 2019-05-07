@@ -5,7 +5,7 @@
 #If no argument is given 1GB file is created.
 #If you want to annihilate MB instead of GB then replace bs=1G with bs=1M in dd command in the following script
 
-#TODO : Using fallocate is probably much faster
+#TODO : Using fallocate is probably much faster. Try to implement this in python.
 
 nGB=1
 if [ $# -eq 1 ]; then
