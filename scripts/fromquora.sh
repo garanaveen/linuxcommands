@@ -8,4 +8,7 @@ wget ${QUORA_LINK} -O ${TMP_FILE}
 
 
 #cat ${TMP_FILE} | html2text -o q.txt 
-cat ${TMP_FILE} | html2text | sed -e 's/<[^>]*>//g' | sed -e 's/&#\d*//g' | sed -e 's/^ *//' > ~/tmp/a 
+cat ${TMP_FILE} | html2text | sed -e 's/<[^>]*>//g' | sed -e 's/&#\d*//g' | sed -e 's/^ *//' > ~/tmp/a
+iconv -c -f utf-8 -t ascii ~/tmp/a | less
+
+
