@@ -1,3 +1,5 @@
+#Similar file : cdfindfirstoccurance.sh
+
 #EXCLUDE_DIR1/2 #Customize this variable to what you want to exclude.
 EXCLUDE_DIR1=.jdx
 EXCLUDE_DIR2=InvalidDir2
