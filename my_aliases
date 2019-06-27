@@ -24,8 +24,7 @@ alias gitpush='git push -u origin master'
 #Speedy aliases,
 alias ff='~/linuxcommands/scripts/findwithname.sh'
 alias vimff='~/linuxcommands/scripts/vimfindfirstoccurance.sh'
-alias cdff='~/linuxcommands/scripts/cdfindfirstoccurance.sh'
-alias cdf='cd $FILEPATH'
+alias cdff='source ~/linuxcommands/scripts/cdfindfirstoccurance.sh' #Its important to source this as there is a 'cd' command inside of this script.
 
 
 alias ff1='~/linuxcommands/scripts/findwithnamemaxdepth.sh 1'
