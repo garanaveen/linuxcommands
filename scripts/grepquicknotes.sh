@@ -3,10 +3,14 @@
 GREP_COMMAND="grep"
 
 #-------------------------------------
+if [ -x "$(command -v ack)" ]; then
+   GREP_COMMAND="ack"
+fi
+
+#Command for ack is ack-grep on linux based systems. So need another conditinal statement.
 if [ -x "$(command -v ack-grep)" ]; then
    GREP_COMMAND="ack-grep"
 fi
-
 
 DONT_PRINT_FILENAME="-h"
 CONTEXT_OF_TWO_LINES="-C2"
@@ -31,3 +35,4 @@ echo "Press enter key........."
 read
 ${GREP_COMMAND} $1 ${HOME}/jdw/ -r -C3 -i --no-filename
 echo "----Results from jdw"
+
