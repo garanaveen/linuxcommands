@@ -9,3 +9,4 @@
 --ignore-file=is:tags
 --ignore-dir=build
 --ignore-dir=thirdparty
+--ignore-dir=.git
