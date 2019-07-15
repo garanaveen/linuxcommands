@@ -46,3 +46,6 @@ alias gg='source ~/linuxcommands/scripts/grepquicknotes.sh'
 alias vimt='vim *.tex'
 
 alias gitwho='echo -n "user.email:"; git config --local user.email; echo -n "user.name:"; git config --local user.name'
+
+alias gitloglocalonlybranches='git log --graph --oneline --branches --not --remotes=*'
+
