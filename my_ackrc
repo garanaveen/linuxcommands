@@ -1,12 +1,16 @@
-#New types,
+#Copy following ackrc options to $HOME/.ackrc file using the following command,
+#cat my_ackrc | tail -n +3 >> ~/.ackrc
+
+#my_ackrc start
 --type-set=ts=.ts
 --type-set=csv=.csv
 --type-set=txt=.txt
+--type-set=proto=.proto
 
-
-#Directories to be ignored
 --ignore-dir=jdx
 --ignore-file=is:tags
 --ignore-dir=build
 --ignore-dir=thirdparty
 --ignore-dir=.git
+#my_ackrc end
+

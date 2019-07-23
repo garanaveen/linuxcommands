@@ -13,8 +13,4 @@ if [ -f ~/linuxcommands/git_aliases ]; then
     source ~/linuxcommands/git_aliases
 fi
 
-if [ -f ~/linuxcommands/my_ackrc ]; then
-    cat ~/linuxcommands/my_ackrc >> ~/.ackrc
-fi
-
 #End======================
