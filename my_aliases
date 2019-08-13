@@ -20,6 +20,7 @@ alias gits='git status'
 alias gitr='git remote -v'
 alias gitinc='git fetch && git log ..origin/master'
 alias gitpush='git push -u origin master'
+alias gitc='git commit -m'
 
 #Speedy aliases,
 alias ff='~/linuxcommands/scripts/findwithname.sh'
