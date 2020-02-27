@@ -33,11 +33,11 @@ echo "----Results from ds and dl"
 
 echo "Press enter key to continue searching........."
 read
-${GREP_COMMAND} $1 ${HOME}/jdw/ -r -C3 -i --no-filename
-echo "----Results from jdw"
+${GREP_COMMAND} $1 ${HOME}/github/garanaveen/ -r -C3 -i --no-filename
+echo "----Results from github/garanaveen"
 
 echo "Press enter key to continue searching........."
 read
-${GREP_COMMAND} $1 ${HOME}/github/garanaveen/ -r -C3 -i --no-filename
-echo "----Results from github/garanaveen"
+${GREP_COMMAND} $1 ${HOME}/jdw/ -r -C3 -i
+echo "----Results from jdw"
 
