@@ -23,6 +23,7 @@ find ${FOLLOW_LINKS_TOO} ${HOME} -maxdepth 3 -name usefulcommands.txt -print |xa
 
 ${GREP_COMMAND} $1 ${HOME}/linuxcommands/ -r -C3 -i --no-filename
 ${GREP_COMMAND} $1 ${HOME}/myreference/ -r -C3 -i --no-filename
+${GREP_COMMAND} $1 ${HOME}/personal/ -r -C3 -i --no-filename
 echo "----Results in linuxcommands and myreferences"
 
 echo "Press enter key to continue searching........."
