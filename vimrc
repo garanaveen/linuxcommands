@@ -30,3 +30,4 @@ vnoremap // y/<C-R>"<CR>
 let @l=']]Nyy]]oLog(QString("opo"));kkkJJJ'
 
 
+source ~/dl/vim/vimrc
