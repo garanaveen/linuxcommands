@@ -29,5 +29,6 @@ vnoremap // y/<C-R>"<CR>
 "This l vim register stores the key sequence to print the Log for every C++ function/method. Need to search for <ClassName::> in vim before using this as this key sequence uses the searched pattern.
 let @l=']]Nyy]]oLog(QString("opo"));kkkJJJ'
 
+colorscheme desert
 
 source ~/dl/vim/vimrc

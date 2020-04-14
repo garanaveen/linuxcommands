@@ -1,0 +1,22 @@
+------------------
+Given a file with directory patsh, create a local filesystem representing those paths.
+
+Example:
+Contents of a file,
+TopLevelDir
+TopLevelDir/DirL1-A
+TopLevelDir/DirL1-A/DirL2-A
+TopLevelDir/DirL1-A/DirL2-B
+TopLevelDir/DirL1-A/DirL2-C
+TopLevelDir/DirL1-B
+TopLevelDir/DirL1-B/DirL2
+
+This should create the same file systems locally,
+TopLevelDir
+   DirL1-A
+      DirL2-A
+      DirL2-B
+      DirL2-C
+   DirL1-B
+      DirL2
+------------------
