@@ -27,8 +27,8 @@ BASHRCFILE=${HOME}/.dummyfile.txt
 
 declare -a FILE_LIST=(
                       ${CURRENT_DIR}/${PLATFORM_SPECIFIC_ALIASES} 
-                      ${CURRENT_DIR}/my_bashrc 
-                      ${CURRENT_DIR}/my_aliases
+                      ${CURRENT_DIR}/bashrc 
+                      ${CURRENT_DIR}/aliases
                       ${CURRENT_DIR}/git_aliases
                      )
 echo "#Start===================="
