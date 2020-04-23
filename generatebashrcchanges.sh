@@ -9,19 +9,20 @@
 source utils.sh
 
 #Default in Linux
-MACHINETYPE=Linux
-BASHRCFILE=${HOME}/.bashrc
-PLATFORM_SPECIFIC_ALIASES=linux_aliases
+#MACHINETYPE=Linux
 CURRENT_DIR=${PWD}
 #echo "CURRENT_DIR : ${CURRENT_DIR}"
 
 if [ "${MACHINETYPE}" == "Mac" ]
 then
-    BASHRCFILE=${HOME}/.bash_profile
+	#echo "Mac"
+    BASHRCFILE=${HOME}/.bashrc_profile
     PLATFORM_SPECIFIC_ALIASES=mac_aliases
+else
+	#echo "Non Mac"
+    BASHRCFILE=${HOME}/.bashrc
+    PLATFORM_SPECIFIC_ALIASES=linux_aliases
 fi
-
-BASHRCFILE=${HOME}/.dummyfile.txt
 
 #echo "Updating ${BASHRCFILE} file to contain custom bashrc and aliases"
 

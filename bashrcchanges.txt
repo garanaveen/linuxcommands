@@ -10,3 +10,8 @@ fi
 if [ -f ~/linuxcommands/git_aliases ]; then
     source ~/linuxcommands/git_aliases
 fi
+
+if [ -f ~/linuxcommands/linux_aliases ]; then
+    source ~/linuxcommands/linux_aliases
+fi
+
