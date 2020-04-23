@@ -29,3 +29,16 @@ git config --local user.name
 
 
 Mac, you also need to update ~/.ssh/config
+
+Other settings
+
+cat bashrcchanges.txt >> $HOME/.bashrc
+
+
+----------------
+ln -sf $HOME/github/garanaveen/linuxcommands $HOME/linuxcommands
+----------------
+Install list,
+sudo apt-get install ack-grep
+
+

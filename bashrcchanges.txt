@@ -1,16 +1,12 @@
-
-#The following lines need to be added to source custom bashrc and aliases to .bashrc 
-#Start====================
-if [ -f ~/linuxcommands/my_bashrc ]; then
-    source ~/linuxcommands/my_bashrc
+#linuxcommands custom commands
+if [ -f ~/linuxcommands/bashrc ]; then
+    source ~/linuxcommands/bashrc
 fi
 
-if [ -f ~/linuxcommands/my_aliases ]; then
-    source ~/linuxcommands/my_aliases
+if [ -f ~/linuxcommands/aliases ]; then
+    source ~/linuxcommands/aliases
 fi
 
 if [ -f ~/linuxcommands/git_aliases ]; then
     source ~/linuxcommands/git_aliases
 fi
-
-#End======================

@@ -40,12 +40,6 @@ weather()
    curl -s "wttr.in/dsm"
 }
 
-#If ack-grep is installed make an alias
-which ack-grep > /dev/null
-if [ 0 == $? ]; then
-   alias ack='ack-grep'
-fi
-
 export PATH=$PATH:$HOME/linuxcommands/scripts/
 
 
