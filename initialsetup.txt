@@ -36,9 +36,10 @@ cat bashrcchanges.txt >> $HOME/.bashrc
 
 
 ----------------
-ln -sf $HOME/github/garanaveen/linuxcommands $HOME/linuxcommands
+ln -sf $PWD $HOME/linuxcommands
 ----------------
-Install list,
+
+Install list for ubuntu,
 sudo apt-get install ack-grep
-
-
+sudo apt-get install terminator
+cat /home/ng81401/linuxcommands/vimrc >> $HOME/.vimrc 

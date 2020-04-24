@@ -6,6 +6,7 @@
 --type-set=csv=.csv
 --type-set=txt=.txt
 --type-set=proto=.proto
+--type-set=ui=.ui
 
 --ignore-dir=jdx
 --ignore-file=is:tags
