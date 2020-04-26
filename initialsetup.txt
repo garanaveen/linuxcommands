@@ -36,7 +36,7 @@ cat bashrcchanges.txt >> $HOME/.bashrc
 
 
 ----------------
-ln -sf $PWD $HOME/linuxcommands
+ln -s $PWD $HOME/linuxcommands
 ----------------
 
 Install list for ubuntu,

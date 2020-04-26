@@ -16,7 +16,7 @@ CURRENT_DIR=${PWD}
 if [ "${MACHINETYPE}" == "Mac" ]
 then
 	#echo "Mac"
-    BASHRCFILE=${HOME}/.bashrc_profile
+    BASHRCFILE=${HOME}/.bash_profile
     PLATFORM_SPECIFIC_ALIASES=mac_aliases
 else
 	#echo "Non Mac"
@@ -32,6 +32,7 @@ declare -a FILE_LIST=(
                       ${CURRENT_DIR}/aliases
                       ${CURRENT_DIR}/git_aliases
                      )
+echo "#./generatebashrcchanges.sh >> $HOME/.bashrc"
 echo "#Start===================="
 for i in "${FILE_LIST[@]}"
 do
