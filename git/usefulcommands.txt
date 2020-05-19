@@ -1,0 +1,5 @@
+You want to apply a patch but want to do a dry-run to make sure there won't be any conflicts before going ahead and applying it. 
+git apply --stat a_file.patch
+git apply --check a_file.patch
+git am a_file.patch 
+
