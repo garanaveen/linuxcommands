@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #TODO : figure out the path for utils from the place where this is run. This source only works if its run from the same directory that this script is in.
-source utils.sh
+#source utils.sh
 
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
