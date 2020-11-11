@@ -7,10 +7,13 @@
 --type-set=txt=.txt
 --type-set=proto=.proto
 --type-set=ui=.ui
+--type-set=ini=.ini
 
 --ignore-dir=jdx
 --ignore-file=is:tags
 --ignore-dir=build
 --ignore-dir=thirdparty
 --ignore-dir=.git
+
+--ignore-file=ext:excludefromsearch
 #linuxcommands/ackrc end

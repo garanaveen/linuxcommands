@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #Usage : ./eathddspace.sh 4
 
 #Give the number of GBs that needs to annihilated as first argument.

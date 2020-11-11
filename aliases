@@ -13,6 +13,23 @@ alias 5b='cd ../../../../../'
 alias 6b='cd ../../../../../../'
 alias 7b='cd ../../../../../../../'
 
+#Type "ls -tr". Then do cd3 to cd in to the 3rd director.
+alias cd1='cd `ls -tr |head -1 |tail -1`'
+alias cd2='cd `ls -tr |head -2 |tail -1`'
+alias cd3='cd `ls -tr |head -3 |tail -1`'
+alias cd4='cd `ls -tr |head -4 |tail -1`'
+alias cd5='cd `ls -tr |head -5 |tail -1`'
+alias cd6='cd `ls -tr |head -6 |tail -1`'
+
+#Type "ls -tr". Then do cd3 to cd in to the 3rd last director.
+alias 1cd='cd `ls -tr  |tail -1 |head -1`'
+alias 2cd='cd `ls -tr  |tail -2 |head -1`'
+alias 3cd='cd `ls -tr  |tail -3 |head -1`'
+alias 4cd='cd `ls -tr  |tail -4 |head -1`'
+alias 5cd='cd `ls -tr  |tail -5 |head -1`'
+alias 6cd='cd `ls -tr  |tail -6 |head -1`'
+
+
 #Git aliases,
 alias gitlog='git log --pretty=oneline --graph'
 alias gitkraken='gitkraken -p .'
@@ -23,6 +40,12 @@ alias gitinc='git log master..origin/master'
 alias gitout='git log origin/master..master'
 alias gitpush='git push -u origin master'
 alias gitc='git commit -m'
+
+function gitout { 
+branch=${1:}
+git log origin/master..master ;
+}
+function gitinc { git log master..origin/master ;}
 
 #Speedy aliases,
 alias ff='~/linuxcommands/scripts/findwithname.sh'
@@ -47,6 +70,9 @@ alias findalldirs='find . -type d'
 alias r='reset'
 
 alias gg='source ~/linuxcommands/scripts/grepquicknotes.sh'
+abb() {
+find $HOME -maxdepth 4 -type f -name "*abbreviations*" |xargs grep "$1"
+}
 
 
 alias vimt='vim *.tex'
@@ -54,4 +80,5 @@ alias vimt='vim *.tex'
 alias gitwho='echo -n "local.user.email:"; git config --local user.email; echo "" ; echo -n "local.user.name:"; git config --local user.name ; echo ""; echo -n "global.user.email:"; git config --global user.email; echo -n "global.user.name:"; git config --global user.name'
 
 alias gitloglocalonlybranches='git log --graph --oneline --branches --not --remotes=*'
+
 
