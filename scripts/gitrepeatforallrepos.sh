@@ -6,6 +6,9 @@
 #find . -maxdepth 2  -mindepth 1 -name .git -type d -exec sh -c 'cd $0 ; cd ../ ; pwd ; git log master..origin/master; cd ..' {} \;
 #find . -maxdepth 2  -mindepth 1 -name .git -type d -exec sh -c 'cd $0 ; cd ../ ; pwd ; git log origin/master..master; cd ..' {} \;
 
+#git status
+#find . -maxdepth 2  -mindepth 1 -name .git -type d -exec sh -c 'cd $0 ; cd ../ ; pwd ; git status ; cd ..' {} \;
+
 #git pull
 #find . -maxdepth 2  -mindepth 1 -name .git -type d -exec sh -c 'cd $0 ; cd ../ ; pwd ; git pull ; cd ..' {} \;
 
