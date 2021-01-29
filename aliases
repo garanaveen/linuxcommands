@@ -35,8 +35,8 @@ alias gitlog='git log --pretty=oneline --graph'
 alias gitkraken='gitkraken -p .'
 alias gits='git status'
 alias gitr='git remote -v'
-#alias gitinc='git fetch && git log ..origin/master'
-alias gitinc='git log master..origin/master'
+alias gitinc='git fetch && git log ..origin/master'
+#alias gitinc='git log master..origin/master'
 alias gitout='git log origin/master..master'
 alias gitpush='git push -u origin master'
 alias gitc='git commit -m'
@@ -45,7 +45,7 @@ function gitout {
 branch=${1:}
 git log origin/master..master ;
 }
-function gitinc { git log master..origin/master ;}
+#function gitinc { git fetch && git log master..origin/master ;}
 
 #Speedy aliases,
 alias ff='~/linuxcommands/scripts/findwithname.sh'
