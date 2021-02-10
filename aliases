@@ -45,7 +45,7 @@ function gitout {
 branch=${1:}
 git log origin/master..master ;
 }
-#function gitinc { git log master..origin/master ;}
+#function gitinc { git fetch && git log master..origin/master ;}
 
 #Speedy aliases,
 alias ff='~/linuxcommands/scripts/findwithname.sh'
