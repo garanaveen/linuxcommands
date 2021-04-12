@@ -1,4 +1,4 @@
-
+#!/bin/bash
 #Personal
 alias q='fold -w 80 -s ~/tmp/a | less'
 alias qaa='fold -w 50 -s ~/tmp/aa | less'
@@ -83,3 +83,4 @@ alias gitwho='echo -n "local.user.email:"; git config --local user.email; echo "
 alias gitloglocalonlybranches='git log --graph --oneline --branches --not --remotes=*'
 
 
+alias n='cd $HOME/n'
