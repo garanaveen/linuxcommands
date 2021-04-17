@@ -31,6 +31,13 @@ vnoremap // y/<C-R>"<CR>
 "let @l=']]Nyy]]oLog(QString("opo"));kkkJJJ'
 
 colorscheme desert
+"Download desert.vim from following link to ~/.vim/colors. 
+"https://www.vim.org/scripts/download_script.php?src_id=2038
+"Change the following line in desert.vim to the following,
+"hi Search cterm=NONE guibg=peru guifg=wheat
+
 
 "linuxcommands/vimrc end
 
+
+let @l=']]Nyy]]ologger.logConsole("fw-00000", "opo");kkkJJJ'
