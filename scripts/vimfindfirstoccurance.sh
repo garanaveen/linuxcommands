@@ -1,6 +1,6 @@
 #Similar file : cdfindfirstoccurance.sh
 
-EXCLUDE_DIR1=jdx
+EXCLUDE_DIR1=dist
 EXCLUDE_DIR2=Dir2-ReplaceThisAsPerYourNeeds
 #Add more exclude paths as per your need.
 

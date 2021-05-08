@@ -54,3 +54,10 @@ cd ${DIR}
 #export PS1='\h:$PWD\$'
 #export PS1='\w\$'
 
+
+#https://stackoverflow.com/questions/24283097/reusing-output-from-last-command-in-bash
+# capture the output of a command so it can be retrieved with ret
+#cap () { tee /tmp/capture.out}
+
+# return the output of the most recent command that was captured by cap
+#ret () { cat /tmp/capture.out }
