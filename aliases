@@ -28,6 +28,8 @@ alias 3cd='cd `ls -tr  |tail -3 |head -1`'
 alias 4cd='cd `ls -tr  |tail -4 |head -1`'
 alias 5cd='cd `ls -tr  |tail -5 |head -1`'
 alias 6cd='cd `ls -tr  |tail -6 |head -1`'
+alias 7cd='cd `ls -tr  |tail -7 |head -1`'
+alias 8cd='cd `ls -tr  |tail -8 |head -1`'
 
 
 #Git aliases,

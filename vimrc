@@ -5,6 +5,7 @@
 "set ic is
 set hls
 set shiftwidth=3
+set scrolloff=30
 
 "If CurtineIncSw.vim plugin is installed,
 map <F4> :call CurtineIncSw()<CR>

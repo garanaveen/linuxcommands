@@ -61,3 +61,7 @@ cd ${DIR}
 
 # return the output of the most recent command that was captured by cap
 #ret () { cat /tmp/capture.out }
+
+#https://medium.com/tech-epic/how-to-use-pbcopy-on-ubuntu-f12940e5e18c
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
