@@ -2,7 +2,7 @@
 #Similar file : vimfindfirstoccurance.sh
 
 #EXCLUDE_DIR1/2 #Customize this variable to what you want to exclude.
-EXCLUDE_DIR1=jdx
+EXCLUDE_DIR1=dist
 EXCLUDE_DIR2=Dir2-ReplaceThisAsPerYourNeeds
 FILEPATH=`find . \
 -type d -name $EXCLUDE_DIR1 -prune \

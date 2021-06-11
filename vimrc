@@ -41,4 +41,4 @@ colorscheme desert
 "linuxcommands/vimrc end
 
 
-let @l=']]Nyy]]ologger.logConsole("fw-00000", "opo");kkkJJJ'
+let @l=']]Nyy]]ologger.logConsole("fw00000", "opo");kkkJJJ'
