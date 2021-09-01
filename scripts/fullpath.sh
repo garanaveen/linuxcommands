@@ -1,5 +1,5 @@
 #!/bin/bash
-echo $PWD/$1 | pbcopy
-echo $PWD/$1
+echo $PWD/$1 | sed 's:\./::g' | pbcopy
+echo $PWD/$1 | sed 's:\./::g'
 echo "cp $PWD/$1 ./"
 

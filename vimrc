@@ -14,15 +14,6 @@ map <F4> :call CurtineIncSw()<CR>
 set tags=./tags;/
 
 
-"Temporary
-nnoremap <C-b> iThe beneficiary will <Esc>
-inoremap <C-b> The beneficiary will <Esc>
-
-nnoremap <C-k> <Esc>0iSkip <Esc>
-inoremap <C-k> Skip <Esc>
-
-
-
 "https://vim.fandom.com/wiki/Search_for_visually_selected_text
 "Press '//' to search a visually selected pattern
 vnoremap // y/<C-R>"<CR>
