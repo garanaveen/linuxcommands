@@ -65,3 +65,4 @@ cd ${DIR}
 #https://medium.com/tech-epic/how-to-use-pbcopy-on-ubuntu-f12940e5e18c
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+
