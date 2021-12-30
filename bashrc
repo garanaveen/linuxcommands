@@ -66,3 +66,14 @@ cd ${DIR}
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
+#To cd in to a director, ccd() lets you use the partial name of the directory name. If there are multiple matches, first match is taken.
+function ccd()
+{
+   DirectoryPartialName=${1}
+   DIR_NAME=`find . -maxdepth 1 -type d -name "*${DirectoryPartialName}*" -print -quit`
+   if [ ! -z "$DIR_NAME" ]; then
+       echo "cd ${DIR_NAME}"
+       cd ${DIR_NAME}
+   fi
+}
+

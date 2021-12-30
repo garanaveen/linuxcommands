@@ -1,5 +1,7 @@
 #!/bin/bash
 #Personal
+alias lsl='ls -ltr'
+
 alias q='fold -w 80 -s ~/tmp/a | less'
 alias qaa='fold -w 50 -s ~/tmp/aa | less'
 alias qaaa='fold -w 50 -s ~/tmp/aaa | less'
@@ -14,41 +16,47 @@ alias 6b='cd ../../../../../../'
 alias 7b='cd ../../../../../../../'
 
 #Type "ls -tr". Then do cd3 to cd in to the 3rd director.
-alias cd1='cd `ls -tr |head -1 |tail -1`'
-alias cd2='cd `ls -tr |head -2 |tail -1`'
-alias cd3='cd `ls -tr |head -3 |tail -1`'
-alias cd4='cd `ls -tr |head -4 |tail -1`'
-alias cd5='cd `ls -tr |head -5 |tail -1`'
-alias cd6='cd `ls -tr |head -6 |tail -1`'
+alias cd1='cd `ls -dtr */ |head -1 |tail -1`'
+alias cd2='cd `ls -dtr */ |head -2 |tail -1`'
+alias cd3='cd `ls -dtr */ |head -3 |tail -1`'
+alias cd4='cd `ls -dtr */ |head -4 |tail -1`'
+alias cd5='cd `ls -dtr */ |head -5 |tail -1`'
+alias cd6='cd `ls -dtr */ |head -6 |tail -1`'
 
 #Type "ls -tr". Then do cd3 to cd in to the 3rd last director.
-#TODO : Instead of listing all the files, just list directories and then say 2cd for 2nd last directory.
-alias 1cd='cd `ls -tr  |tail -1 |head -1`'
-alias 2cd='cd `ls -tr  |tail -2 |head -1`'
-alias 3cd='cd `ls -tr  |tail -3 |head -1`'
-alias 4cd='cd `ls -tr  |tail -4 |head -1`'
-alias 5cd='cd `ls -tr  |tail -5 |head -1`'
-alias 6cd='cd `ls -tr  |tail -6 |head -1`'
-alias 7cd='cd `ls -tr  |tail -7 |head -1`'
-alias 8cd='cd `ls -tr  |tail -8 |head -1`'
+alias 1cd='cd `ls -dtr */  |tail -1 |head -1`'
+alias 2cd='cd `ls -dtr */  |tail -2 |head -1`'
+alias 3cd='cd `ls -dtr */  |tail -3 |head -1`'
+alias 4cd='cd `ls -dtr */  |tail -4 |head -1`'
+alias 5cd='cd `ls -dtr */  |tail -5 |head -1`'
+alias 6cd='cd `ls -dtr */  |tail -6 |head -1`'
+alias 7cd='cd `ls -dtr */  |tail -7 |head -1`'
+alias 8cd='cd `ls -dtr */  |tail -8 |head -1`'
 
 
 #Git aliases,
 alias gitlog='git log --pretty=oneline --graph'
 alias gitkraken='gitkraken -p .'
 alias gits='git status'
-alias gitr='git remote -v'
-alias gitinc='git fetch && git log ..origin/master'
-#alias gitinc='git log master..origin/master'
-alias gitout='git log origin/master..master'
-alias gitpush='git push -u origin master'
+alias gitinc='git fetch && git log ..origin/main'
+#alias gitinc='git log main..origin/main'
+alias gitout='git log remotes/origin/"$(git symbolic-ref --short HEAD)".."$(git symbolic-ref --short HEAD)"'
+alias gitpush='git push -u origin main'
 alias gitc='git commit -m'
 
 function gitout { 
 branch=${1:}
-git log origin/master..master ;
+#git log origin/main..main ;
+git log remotes/origin/"$(git symbolic-ref --short HEAD)".."$(git symbolic-ref --short HEAD)"
+
 }
-#function gitinc { git fetch && git log master..origin/master ;}
+
+function gitr {
+git remote -v; 
+git remote -v  |grep fetch |sed 's^origin.*git@^https://^' |sed 's^.git (fetch)^^' | xclip -selection clipboard
+git remote -v  |grep fetch |sed 's^origin.*git@^Weblink : https://^' |sed 's^.git (fetch)^^'
+}
+#function gitinc { git fetch && git log main..origin/main ;}
 
 #Speedy aliases,
 alias ff='~/linuxcommands/scripts/findwithname.sh'
@@ -74,10 +82,13 @@ alias findalldirs='find . -type d'
 alias r='reset'
 
 alias gg='source ~/linuxcommands/scripts/grepquicknotes.sh'
-abb() {
+function abb() {
 find $HOME -maxdepth 4 -type f -name "*abbreviations*" |xargs grep "$1"
 }
 
+function h() {
+history |grep $1
+}
 
 alias vimt='vim *.tex'
 
@@ -87,3 +98,7 @@ alias gitloglocalonlybranches='git log --graph --oneline --branches --not --remo
 
 
 alias n='cd $HOME/n'
+alias nu='cd $HOME/nu'
+
+alias st='speaker-test  --nperiods 10 --nloops 1'
+alias soundtest='speaker-test  --nperiods 10 --nloops 1'
