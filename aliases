@@ -43,6 +43,8 @@ alias gitinc='git fetch && git log ..origin/main'
 alias gitout='git log remotes/origin/"$(git symbolic-ref --short HEAD)".."$(git symbolic-ref --short HEAD)"'
 alias gitpush='git push -u origin main'
 alias gitc='git commit -m'
+alias gitdiffwithmain='git diff main.."$(git symbolic-ref --short HEAD)"'
+
 
 function gitout { 
 branch=${1:}
@@ -88,6 +90,7 @@ find $HOME -maxdepth 4 -type f -name "*abbreviations*" |xargs grep "$1"
 
 function h() {
 history |grep $1
+grep $1 ~/n/frequentlyusedcommands.txt
 }
 
 alias vimt='vim *.tex'

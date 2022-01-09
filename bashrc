@@ -66,12 +66,13 @@ cd ${DIR}
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
-#To cd in to a director, ccd() lets you use the partial name of the directory name. If there are multiple matches, first match is taken.
-function ccd()
+#To change in to a director, jd() - (i.e. jumpToDirectory) lets you use the partial name of the directory to jump to up to a dept 4. If there are multiple matches, first match is taken. So, try to specify a partial name that is unique enough.
+function jd()
 {
    DirectoryPartialName=${1}
-   DIR_NAME=`find . -maxdepth 1 -type d -name "*${DirectoryPartialName}*" -print -quit`
+   DIR_NAME=`find . -maxdepth 4 -type d -name "*${DirectoryPartialName}*" -print -quit`
    if [ ! -z "$DIR_NAME" ]; then
+	#If directory is found, cd in to it.
        echo "cd ${DIR_NAME}"
        cd ${DIR_NAME}
    fi
