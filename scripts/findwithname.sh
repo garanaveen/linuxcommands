@@ -8,7 +8,7 @@ FIRST_FILE_PATH=$(find . \
 -o -type d -name $EXCLUDE_DIR2 -prune \
 -o -name .hg -prune \
 -o -name .git -prune \
--o -name "*$1*"  -print -quit)
+-o -iname "*$1*"  -print -quit)
 
 FULLPATH=$(echo ${PWD}/${FIRST_FILE_PATH} | sed 's:\./::g')
 echo ${FULLPATH} | xclip -selection clipboard
@@ -20,4 +20,4 @@ find . \
 -o -type d -name $EXCLUDE_DIR2 -prune \
 -o -name .hg -prune \
 -o -name .git -prune \
--o -name "*$1*"  -print
+-o -iname "*$1*"  -print
