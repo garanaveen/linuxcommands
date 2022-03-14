@@ -105,3 +105,5 @@ alias nu='cd $HOME/nu'
 
 alias st='speaker-test  --nperiods 10 --nloops 1'
 alias soundtest='speaker-test  --nperiods 10 --nloops 1'
+
+alias gll='source ~/linuxcommands/scripts/generategithublink.sh'
