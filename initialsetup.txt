@@ -1,28 +1,4 @@
-https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
-
-Linux,
-~/.ssh/id_rsa-garanaveen
-ssh-keygen -t rsa -b 4096 -C "garanaveen@gmail.com"
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa-garanaveen
-pbcopy < ~/.ssh/id_rsa-garanaveen.pub
-
-Mac,
-/Users/naveengara/.ssh/id_rsa-garanaveen
-ssh-keygen -t rsa -b 4096 -C "garanaveen@gmail.com"
-eval "$(ssh-agent -s)"
-ssh-add -K /Users/naveengara/.ssh/id_rsa-garanaveen
-pbcopy < ~/.ssh/id_rsa-garanaveen.pub
-
-
-Verify if the keys added are correct,
-ssh-add -l -E md5
-Delete existing keys,
-ssh-add -D
-git config --local user.email "garanaveen@gmail.com"
-git config --local user.email
-git config --local user.name "garanaveen"
-git config --local user.name
+Check gitsshkeys.txt for adding ssh keys to github.com portal.
 
 Mac, you also need to update ~/.ssh/config
 Other settings

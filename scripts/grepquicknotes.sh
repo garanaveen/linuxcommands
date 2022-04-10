@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if ! command -v ack &> /dev/null
+then
+   echo "ack command needs to be installed"
+   echo "sudo apt-get install ack-grep"
+   exit
+fi
+
 SEARCH_PATTERN="$1"
 GREP_COMMAND="ack"
 FOLLOW_LINKS_TOO="-L"

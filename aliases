@@ -83,7 +83,7 @@ alias findalldirs='find . -type d'
 
 alias r='reset'
 
-alias gg='source ~/linuxcommands/scripts/grepquicknotes.sh'
+alias gg='~/linuxcommands/scripts/grepquicknotes.sh'
 function abb() {
 find $HOME -maxdepth 4 -type f -name "*abbreviations*" |xargs grep "$1"
 }

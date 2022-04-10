@@ -1,0 +1,31 @@
+How to check what keys are added?
+Linux,
+ssh-add -l -E md5
+
+-------------------------------------------------
+Adding ssh keys for github/gitlab, using new ed25519 protocol.
+-------------------------------------------------
+https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+ssh-keygen -t ed25519 -C "your_email@example.com"
+eval "$(ssh-agent -s)"
+Linux,
+ssh-add ~/.ssh/id_ed25519
+Mac,
+ssh-add -K ~/.ssh/id_ed25519
+
+Add ~/.ssh/id_ed25519.pub to the github/lab.com settings.
+-------------------------------------------------
+
+
+
+git config --global user.email "email@example.com"
+git config --global user.email
+
+git config --global user.name "username"
+git config --global user.name
+
+
+-------------------------------------------------
+How to add ssh keys for multiple github accounts?
+https://gist.github.com/jexchan/2351996
+
