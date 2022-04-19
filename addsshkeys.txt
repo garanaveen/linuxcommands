@@ -2,11 +2,23 @@ How to check what keys are added?
 Linux,
 ssh-add -l -E md5
 
+Convention for the name of the key added.
+machinename - ubuntu
+workorpersonal - personal
+subidentifier - eng
+Username - garanaveen
+platformname - gitlab/github
+
+Examples:
+mac-personal-subidentifier-garanaveen-github
+ubuntu-personal-subidentifier-garanaveen-github
+
+
 -------------------------------------------------
 Adding ssh keys for github/gitlab, using new ed25519 protocol.
 -------------------------------------------------
 https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-ssh-keygen -t ed25519 -C "your_email@example.com"
+ssh-keygen -t ed25519 -C "machinename-workorpersonal-subidentifier-username-platformname"
 eval "$(ssh-agent -s)"
 Linux,
 ssh-add ~/.ssh/id_ed25519
