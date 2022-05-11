@@ -55,16 +55,13 @@ git log remotes/origin/"$(git symbolic-ref --short HEAD)".."$(git symbolic-ref -
 
 function gitr {
 git remote -v; 
-git remote -v  |grep fetch |sed 's^origin.*git@^https://^' |sed 's^.git (fetch)^^' | xclip -selection clipboard
 
 #generate weblink for the repo,
 #Change "origin	git@github.com:username/reponame.git (fetch)" to "https://github.com/username/reponame"
 
-git remote -v  |grep fetch 
-| sed 's^.git (fetch)^^' 
-| sed 's^origin.*git@^https://^' 
-#Replace ':' with '/'
-| sed 's^com:^com/^'
+git remote -v  |grep fetch | sed 's^.git (fetch)^^' | sed 's^origin.*git@^https://^' | sed 's^com:^com/^' | pbcopy
+WEBLINK=`git remote -v  |grep fetch | sed 's^.git (fetch)^^' | sed 's^origin.*git@^https://^' | sed 's^com:^com/^'` 
+echo "\"${WEBLINK}\" copied to clipboard"
 }
 #function gitinc { git fetch && git log main..origin/main ;}
 
