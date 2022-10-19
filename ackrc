@@ -9,6 +9,7 @@
 --type-set=ui=.ui
 --type-set=ini=.ini
 --type-set=patch=.patch
+--type-set=brs=.brs
 
 --ignore-dir=jdx
 --ignore-file=is:tags

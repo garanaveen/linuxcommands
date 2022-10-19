@@ -38,6 +38,7 @@ alias 8cd='cd `ls -dtr */  |tail -8 |head -1`'
 alias gitlog='git log --pretty=oneline --graph'
 alias gitkraken='gitkraken -p .'
 alias gits='git status'
+alias gitb='git branch --show-current'
 alias gitinc='git fetch && git log ..origin/main'
 #alias gitinc='git log main..origin/main'
 alias gitout='git log remotes/origin/"$(git symbolic-ref --short HEAD)".."$(git symbolic-ref --short HEAD)"'
@@ -60,11 +61,10 @@ git remote -v  |grep fetch |sed 's^origin.*git@^https://^' |sed 's^.git (fetch)^
 #generate weblink for the repo,
 #Change "origin	git@github.com:username/reponame.git (fetch)" to "https://github.com/username/reponame"
 
-git remote -v  |grep fetch 
-| sed 's^.git (fetch)^^' 
-| sed 's^origin.*git@^https://^' 
-#Replace ':' with '/'
-| sed 's^com:^com/^'
+git remote -v  |grep fetch | \
+ sed 's^.git (fetch)^^' | \
+sed 's^origin.*git@^https://^' | \
+ sed 's^com:^com/^'
 }
 #function gitinc { git fetch && git log main..origin/main ;}
 
@@ -106,6 +106,9 @@ alias vimt='vim *.tex'
 alias gitwho='echo -n "local.user.email:"; git config --local user.email; echo "" ; echo -n "local.user.name:"; git config --local user.name ; echo ""; echo -n "global.user.email:"; git config --global user.email; echo -n "global.user.name:"; git config --global user.name'
 
 alias gitloglocalonlybranches='git log --graph --oneline --branches --not --remotes=*'
+
+#git branch piped to grep
+alias gitbg='git branch --all | grep'
 
 
 alias n='cd $HOME/n'

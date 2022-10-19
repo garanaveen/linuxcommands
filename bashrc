@@ -78,3 +78,48 @@ function jd()
    fi
 }
 
+
+function gb()
+{
+   if [ "$#" = 0 ]; then
+      git branch
+   else
+      git branch | grep $1
+   fi
+}
+
+#Log for two branches
+function git2log()
+{
+   MAIN_BRANCH="master"
+   if [ -n "$(git branch --list "master")" ]
+   then
+      MAIN_BRANCH="master"
+   else
+      MAIN_BRANCH="main"
+   fi
+
+   echo "MAIN_BRANCH : $MAIN_BRANCH"
+   CURRENT_BRANCH=`git branch --show-current`
+   echo "CURRENT_BRANCH : $CURRENT_BRANCH"
+   git log --oneline --graph ${MAIN_BRANCH} ${CURRENT_BRANCH}
+}
+
+
+#gitdiffwithmain
+#gitdiffwithmaster
+function gitdwmain()
+{
+   MAIN_BRANCH="master"
+   if [ -n "$(git branch --list "master")" ]
+   then
+      MAIN_BRANCH="master"
+   else
+      MAIN_BRANCH="main"
+   fi
+
+   echo "MAIN_BRANCH : $MAIN_BRANCH"
+   CURRENT_BRANCH=`git branch --show-current`
+   echo "CURRENT_BRANCH : $CURRENT_BRANCH"
+   git diff ${MAIN_BRANCH}..${CURRENT_BRANCH}
+}

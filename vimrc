@@ -4,8 +4,11 @@
 
 "set ic is
 set hls
+set tabstop=3
 set shiftwidth=3
 set scrolloff=30
+set expandtab
+
 
 "If CurtineIncSw.vim plugin is installed,
 map <F4> :call CurtineIncSw()<CR>
@@ -33,3 +36,5 @@ colorscheme desert
 
 
 let @l=']]ologger.logConsole<"%?:%?">("fw00000", __PRETTY_FUNCTION__, __LINE__);'
+
+
