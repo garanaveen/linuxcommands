@@ -29,4 +29,13 @@ ssh://git@ssh.github.com:443/garanaveen/myreference.git
 
 -------------------------------------------------------------------------------------------------
 
+MacBook-Pro:/Users/naveengara/github/garanaveen/personal$ git pull
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+MacBook-Pro:/Users/naveengara/github/garanaveen/linuxcommands$ ./gitaut*.sh
+
+-------------------------------------------------------------------------------------------------
 

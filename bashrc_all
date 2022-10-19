@@ -62,10 +62,6 @@ cd ${DIR}
 # return the output of the most recent command that was captured by cap
 #ret () { cat /tmp/capture.out }
 
-#https://medium.com/tech-epic/how-to-use-pbcopy-on-ubuntu-f12940e5e18c
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
-
 #To change in to a director, jd() - (i.e. jumpToDirectory) lets you use the partial name of the directory to jump to up to a dept 4. If there are multiple matches, first match is taken. So, try to specify a partial name that is unique enough.
 function jd()
 {
