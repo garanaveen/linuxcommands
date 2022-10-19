@@ -1,1 +1,6 @@
-#Placeholder file.
+
+#git add ssh keys for mac,
+ssh-add --apple-use-keychain ${HOME}/.ssh/id_ed25519-mac-roku-eng-ngara-gitlab
+ssh-add --apple-use-keychain ${HOME}/.ssh/id_ed25519-mac-roku-garanaveen-github
+ssh-add --apple-use-keychain ${HOME}/.ssh/id_ed25519-mac-roku-ngara-gitlab
+

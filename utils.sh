@@ -7,7 +7,7 @@ function setmachinetype()
        Darwin*)    export MACHINETYPE=Mac;;
        *)          export MACHINETYPE=Linux #Default to Linux
    esac
-   #echo "This is \"${MACHINETYPE}\" os"
+   echo "This is \"${MACHINETYPE}\" os"
 
 }
 
