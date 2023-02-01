@@ -119,3 +119,7 @@ function gitdwmain()
    echo "CURRENT_BRANCH : $CURRENT_BRANCH"
    git diff ${MAIN_BRANCH}..${CURRENT_BRANCH}
 }
+
+#https://direnv.net/
+eval "$(direnv hook bash)"
+
