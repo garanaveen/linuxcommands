@@ -3,10 +3,28 @@ import re
 import sys
 
 def extract_hashtags(text):
+    """
+    Extracts hashtags from the given text using regular expressions.
+
+    Args:
+        text (str): The text to extract hashtags from.
+
+    Returns:
+        list: A list of extracted hashtags.
+    """
     hashtags = re.findall(r'#([A-Za-z0-9]+)', text)
     return hashtags
 
 def find_tags(directory):
+    """
+    Finds and extracts unique hashtags from text-based files in the given directory (excluding ".log" files and "tags.txt").
+
+    Args:
+        directory (str): The directory path to search for files.
+
+    Returns:
+        set: A set of unique hashtags found in the files.
+    """
     tags = set()
 
     for filename in os.listdir(directory):
@@ -21,6 +39,16 @@ def find_tags(directory):
     return tags
 
 def write_tags_to_file(tags, output_file):
+    """
+    Writes the extracted hashtags to a file.
+
+    Args:
+        tags (set): A set of extracted hashtags.
+        output_file (str): The file path to write the hashtags.
+
+    Returns:
+        None
+    """
     with open(output_file, 'w') as file:
         for tag in tags:
             file.write(f'{tag}\n')
