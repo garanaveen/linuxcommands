@@ -1,5 +1,5 @@
 #!/bin/bash
-#Personal
+# Personal
 alias lsl='ls -ltr'
 
 alias q='fold -w 80 -s ~/tmp/a | less'
@@ -15,7 +15,7 @@ alias 5b='cd ../../../../../'
 alias 6b='cd ../../../../../../'
 alias 7b='cd ../../../../../../../'
 
-#Type "ls -tr". Then do cd3 to cd in to the 3rd director.
+# Type "ls -tr". Then do cd3 to cd in to the 3rd director.
 alias cd1='cd `ls -dtr */ |head -1 |tail -1`'
 alias cd2='cd `ls -dtr */ |head -2 |tail -1`'
 alias cd3='cd `ls -dtr */ |head -3 |tail -1`'
@@ -23,7 +23,7 @@ alias cd4='cd `ls -dtr */ |head -4 |tail -1`'
 alias cd5='cd `ls -dtr */ |head -5 |tail -1`'
 alias cd6='cd `ls -dtr */ |head -6 |tail -1`'
 
-#Type "ls -tr". Then do cd3 to cd in to the 3rd last director.
+# Type "ls -tr". Then do cd3 to cd in to the 3rd last director.
 alias 1cd='cd `ls -dtr */  |tail -1 |head -1`'
 alias 2cd='cd `ls -dtr */  |tail -2 |head -1`'
 alias 3cd='cd `ls -dtr */  |tail -3 |head -1`'
@@ -34,13 +34,13 @@ alias 7cd='cd `ls -dtr */  |tail -7 |head -1`'
 alias 8cd='cd `ls -dtr */  |tail -8 |head -1`'
 
 
-#Git aliases,
+# Git aliases,
 alias gitlog='git log --pretty=oneline --graph'
 alias gitkraken='gitkraken -p .'
 alias gits='git status'
 alias gitb='git branch --show-current'
 alias gitinc='git fetch && git log ..origin/main'
-#alias gitinc='git log main..origin/main'
+# alias gitinc='git log main..origin/main'
 alias gitout='git log remotes/origin/"$(git symbolic-ref --short HEAD)".."$(git symbolic-ref --short HEAD)"'
 alias gitpush='git push -u origin main'
 alias gitc='git commit -m'
@@ -49,7 +49,7 @@ alias gitdiffwithmain='git diff main.."$(git symbolic-ref --short HEAD)"'
 
 function gitout { 
 branch=${1:}
-#git log origin/main..main ;
+# git log origin/main..main ;
 git log remotes/origin/"$(git symbolic-ref --short HEAD)".."$(git symbolic-ref --short HEAD)"
 
 }
@@ -57,17 +57,17 @@ git log remotes/origin/"$(git symbolic-ref --short HEAD)".."$(git symbolic-ref -
 function gitr {
 git remote -v; 
 
-#generate weblink for the repo,
-#Change "origin	git@github.com:username/reponame.git (fetch)" to "https://github.com/username/reponame"
+# generate weblink for the repo,
+# Change "origin	git@github.com:username/reponame.git (fetch)" to "https://github.com/username/reponame"
 
 git remote -v  |grep fetch | \
  sed 's^.git (fetch)^^' | \
 sed 's^origin.*git@^https://^' | \
  sed 's^com:^com/^'
 }
-#function gitinc { git fetch && git log main..origin/main ;}
+# function gitinc { git fetch && git log main..origin/main ;}
 
-#Speedy aliases,
+# Speedy aliases,
 alias ff='~/linuxcommands/scripts/findwithname.sh'
 alias vimff='~/linuxcommands/scripts/vimfindfirstoccurance.sh'
 alias cdff='source ~/linuxcommands/scripts/cdfindfirstoccurance.sh' #Its important to source this as there is a 'cd' command inside of this script.
@@ -106,7 +106,7 @@ alias gitwho='echo -n "local.user.email:"; git config --local user.email; echo "
 
 alias gitloglocalonlybranches='git log --graph --oneline --branches --not --remotes=*'
 
-#git branch piped to grep
+# git branch piped to grep
 alias gitbg='git branch --all | grep'
 
 

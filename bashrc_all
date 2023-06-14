@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#TODO : figure out the path for utils from the place where this is run. This source only works if its run from the same directory that this script is in.
-#source utils.sh
+# TODO : figure out the path for utils from the place where this is run. This source only works if its run from the same directory that this script is in.
+# source utils.sh
 
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
@@ -43,7 +43,7 @@ weather()
 export PATH=$PATH:$HOME/linuxcommands/scripts/
 
 
-#Use cdd when you want to change to directory of the given filepath. This way you can avoid deleting the file name at the end.
+# Use cdd when you want to change to directory of the given filepath. This way you can avoid deleting the file name at the end.
 cdd()
 {
 DIR=`dirname $1`
@@ -51,18 +51,18 @@ echo "${DIR}"
 cd ${DIR}
 }
 
-#export PS1='\h:$PWD\$'
-#export PS1='\w\$'
+# export PS1='\h:$PWD\$'
+# export PS1='\w\$'
 
 
 #https://stackoverflow.com/questions/24283097/reusing-output-from-last-command-in-bash
 # capture the output of a command so it can be retrieved with ret
-#cap () { tee /tmp/capture.out}
+# cap () { tee /tmp/capture.out}
 
 # return the output of the most recent command that was captured by cap
-#ret () { cat /tmp/capture.out }
+# ret () { cat /tmp/capture.out }
 
-#To change in to a director, jd() - (i.e. jumpToDirectory) lets you use the partial name of the directory to jump to up to a dept 4. If there are multiple matches, first match is taken. So, try to specify a partial name that is unique enough.
+# To change in to a director, jd() - (i.e. jumpToDirectory) lets you use the partial name of the directory to jump to up to a dept 4. If there are multiple matches, first match is taken. So, try to specify a partial name that is unique enough.
 function jd()
 {
    DirectoryPartialName=${1}
@@ -84,7 +84,7 @@ function gb()
    fi
 }
 
-#Log for two branches
+# Log for two branches
 function git2log()
 {
    MAIN_BRANCH="master"
@@ -120,6 +120,6 @@ function gitdwmain()
    git diff ${MAIN_BRANCH}..${CURRENT_BRANCH}
 }
 
-#https://direnv.net/
+#bookmark https://direnv.net/
 eval "$(direnv hook bash)"
 

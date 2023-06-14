@@ -1,17 +1,17 @@
 #!/bin/bash
 
-#Usage,
-#Linux,
-#./generatebashrcchanges.sh >> ${HOME}/.bashrc
-#Mac,
-#./generatebashrcchanges.sh >> ${HOME}/.bash_profile
+# Usage,
+# Linux,
+# ./generatebashrcchanges.sh >> ${HOME}/.bashrc
+# Mac,
+# ./generatebashrcchanges.sh >> ${HOME}/.bash_profile
 
 source utils.sh
 
-#Default in Linux
-#MACHINETYPE=Linux
+# Default in Linux
+# MACHINETYPE=Linux
 CURRENT_DIR=${PWD}
-#echo "CURRENT_DIR : ${CURRENT_DIR}"
+# echo "CURRENT_DIR : ${CURRENT_DIR}"
 
 if [ "${MACHINETYPE}" == "Mac" ]
 then
@@ -26,7 +26,7 @@ else
     PLATFORM_SPECIFIC_BASHRC=bashrc_linux
 fi
 
-#echo "Updating ${BASHRCFILE} file to contain custom bashrc and aliases"
+# echo "Updating ${BASHRCFILE} file to contain custom bashrc and aliases"
 
 declare -a FILE_LIST=(
                       ${CURRENT_DIR}/${PLATFORM_SPECIFIC_ALIASES} 
@@ -35,16 +35,16 @@ declare -a FILE_LIST=(
                       ${CURRENT_DIR}/aliases
                       ${CURRENT_DIR}/git_aliases
                      )
-echo "#./generatebashrcchanges.sh >> $HOME/.bashrc"
-echo "#./generatebashrcchanges.sh >> $HOME/.bash_profile"
-echo "#Start===================="
+echo "# ./generatebashrcchanges.sh >> $HOME/.bashrc"
+echo "# ./generatebashrcchanges.sh >> $HOME/.bash_profile"
+echo "# Start===================="
 for i in "${FILE_LIST[@]}"
 do
   echo "if [ -f ${i} ]; then"
   echo "    source ${i}"
   echo "fi"
-  echo "#--------------------"
+  echo "# --------------------"
 done
-echo "#End======================"
+echo "# End======================"
 
 
