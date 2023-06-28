@@ -7,7 +7,7 @@ export LINUXCOMMANDS_ROOT=$PWD/
 echo "LINUXCOMMANDS_ROOT : $LINUXCOMMANDS_ROOT"
 
 
-#-h is test if file exists and is a link.
+# -h is test if file exists and is a link.
 if [ ! -h "$HOME/linuxcommands" ]; then
     ln -sv $PWD $HOME/linuxcommands
 fi
@@ -16,7 +16,7 @@ cat $HOME/linuxcommands/vimrc >> $HOME/.vimrc
 
 
 
-#Git config
+# Git config
 git config --local user.email "garanaveen@gmail.com"
 git config --local user.name "garanaveen"
 
