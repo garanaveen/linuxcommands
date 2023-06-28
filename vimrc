@@ -37,4 +37,5 @@ colorscheme desert
 
 let @l=']]ologger.logConsole<"%?:%?">("fw00000", __PRETTY_FUNCTION__, __LINE__);'
 
+iab jira https://jira.portal.roku.com:8443/browse/
 

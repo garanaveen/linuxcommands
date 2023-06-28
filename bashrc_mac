@@ -1,6 +1,8 @@
-
 #git add ssh keys for mac,
-ssh-add --apple-use-keychain ${HOME}/.ssh/id_ed25519-mac-roku-eng-ngara-gitlab
-ssh-add --apple-use-keychain ${HOME}/.ssh/id_ed25519-mac-roku-garanaveen-github
-ssh-add --apple-use-keychain ${HOME}/.ssh/id_ed25519-mac-roku-ngara-gitlab
+if [[ $(uname) == "Darwin" ]]; then
+  echo "This script should be run only on macOS."
+  ssh-add --apple-use-keychain ${HOME}/.ssh/id_ed25519-mac-roku-eng-ngara-gitlab
+  ssh-add --apple-use-keychain ${HOME}/.ssh/id_ed25519-mac-roku-garanaveen-github
+  ssh-add --apple-use-keychain ${HOME}/.ssh/id_ed25519-mac-roku-ngara-gitlab
+fi
 
