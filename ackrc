@@ -21,6 +21,8 @@
 --ignore-file=ext:excludefromsearch
 
 --smart-case
+
+#Enable this to supress filename and line numbers,
 #--no-filename
 #linuxcommands/ackrc end
 
