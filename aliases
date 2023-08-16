@@ -45,6 +45,7 @@ alias gitout='git log remotes/origin/"$(git symbolic-ref --short HEAD)".."$(git 
 alias gitpush='git push -u origin main'
 alias gitc='git commit -m'
 alias gitdiffwithmain='git diff main.."$(git symbolic-ref --short HEAD)"'
+alias gitdiffwithmaster='git diff master.."$(git symbolic-ref --short HEAD)"'
 
 
 function gitout { 
