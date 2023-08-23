@@ -21,6 +21,7 @@ def search_files(patterns, directory, min_depth, max_depth):
 
         for file in files:
             file_path = os.path.join(root, file)
+            # print("file:", file_path)
             file_name, file_extension = os.path.splitext(file)
             if file_extension == '' and not file_name.startswith('.'):
                 for pattern in patterns:
@@ -38,20 +39,22 @@ def generate_bash_script(file_paths):
     return script
 
 # List of patterns to search for
-patterns = ["aliases", "bashrc", "pattern3"]
+patterns = ["aliases", "bashrc"]
 
 # Directory to start searching from
 directory = os.getcwd()
 
 # Minimum and maximum depth for searching files
-min_depth = 1
-max_depth = 4
+min_depth = 0
+max_depth = 3
 
 # Search for matching files
 matched_files = search_files(patterns, directory, min_depth, max_depth)
+print("matched_files created!")
 
 # Generate bash script
 bash_script = generate_bash_script(matched_files)
+print("bash_script generated!")
 
 # Write the bash script to a file
 with open("sourcing_script.sh", "w") as file:
