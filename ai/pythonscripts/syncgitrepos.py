@@ -49,10 +49,10 @@ def sync_repositories(repositories):
 
 if __name__ == "__main__":
     repositories = [
-        ("/home/ngara/git/garanaveen/personal", "origin,master"),
+        ("/home/ngara/ngara-utils/", "origin,master"),
         ("/home/ngara/git/garanaveen/linuxcommands/", "origin,master"),
         ("/home/ngara/ngara-notes/", "origin,master"),
-        ("/home/ngara/ngara-utils/", "origin,master"),
+        ("/home/ngara/git/garanaveen/personal", "origin,master"),
         # Add more repositories as needed
     ]
     
