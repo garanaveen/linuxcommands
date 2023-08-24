@@ -11,13 +11,13 @@ def check_unstaged_changes(repo_path):
 def check_incoming_changes(repo_path, remote_name, branch_name):
     os.chdir(repo_path)
     subprocess.run(["git", "fetch", remote_name])
-    result = subprocess.run(["git", "log", f"{remote_name}/{branch_name}..{branch_name}", "--oneline"], capture_output=True, text=True)
+    result = subprocess.run(["git", "log", f"{branch_name}..{remote_name}/{branch_name}", "--oneline"], capture_output=True, text=True)
     return result.stdout.strip()
 
 def check_outgoing_changes(repo_path, remote_name, branch_name):
     os.chdir(repo_path)
     subprocess.run(["git", "fetch", remote_name])
-    result = subprocess.run(["git", "log", f"{branch_name}..{remote_name}/{branch_name}", "--oneline"], capture_output=True, text=True)
+    result = subprocess.run(["git", "log", f"{remote_name}/{branch_name}..{branch_name}", "--oneline"], capture_output=True, text=True)
     return result.stdout.strip()
 
 def sync_repositories(repositories):
@@ -50,9 +50,9 @@ def sync_repositories(repositories):
 if __name__ == "__main__":
     repositories = [
         ("/home/ngara/ngara-utils/", "origin,master"),
-        ("/home/ngara/git/garanaveen/linuxcommands/", "origin,master"),
         ("/home/ngara/ngara-notes/", "origin,master"),
         ("/home/ngara/git/garanaveen/personal", "origin,master"),
+        ("/home/ngara/git/garanaveen/linuxcommands/", "origin,master"),
         # Add more repositories as needed
     ]
     
