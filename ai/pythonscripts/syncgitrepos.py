@@ -22,10 +22,8 @@ def check_outgoing_changes(repo_path, remote_name, branch_name):
 
 def sync_repositories(repositories):
     for repo_info in repositories:
-        repo_path, remote_info = repo_info
-        repo_name, branch_name = remote_info.split(',')
-        repo_name = repo_name.strip()
-        branch_name = branch_name.strip()
+        repo_path, remote_name, branch_name = repo_info
+        repo_path = os.path.expanduser(repo_path)
 
         print(f"Checking repository: {repo_path}")
         
@@ -33,28 +31,45 @@ def sync_repositories(repositories):
             print("Repository has unstaged/uncommitted changes. Sync stopped.")
             return
 
-        incoming_changes = check_incoming_changes(repo_path, repo_name, branch_name)
+        incoming_changes = check_incoming_changes(repo_path, remote_name, branch_name)
         if incoming_changes:
             print("Incoming changes detected:")
             print(incoming_changes)
             print("Sync stopped.")
             return
 
-        outgoing_changes = check_outgoing_changes(repo_path, repo_name, branch_name)
+        outgoing_changes = check_outgoing_changes(repo_path, remote_name, branch_name)
         if outgoing_changes:
             print("Outgoing changes detected:")
             print(outgoing_changes)
         
         print("Repository is in sync.\n")
 
+def read_repository_file(file_path):
+    repositories = []
+    if os.path.isfile(file_path):
+        with open(file_path, 'r') as file:
+            for line in file:
+                line = line.strip()
+                if line:
+                    parts = line.split(',')
+                    if len(parts) == 3:
+                        repositories.append(parts)
+    return repositories
+
 if __name__ == "__main__":
+    home_directory = os.path.expanduser("~")
+    repos_file = os.path.join(home_directory, ".syncrepos")
+    additional_repositories = read_repository_file(repos_file)
+
+    # Define the initial repositories in .syncrepos format
     repositories = [
-        ("/home/ngara/ngara-utils/", "origin,master"),
-        ("/home/ngara/ngara-notes/", "origin,master"),
-        ("/home/ngara/git/garanaveen/personal", "origin,master"),
-        ("/home/ngara/git/garanaveen/linuxcommands/", "origin,master"),
+        ("/home/ngara/git/garanaveen/personal","origin","master"),
         # Add more repositories as needed
     ]
-    
+
+    # Add repositories from the file
+    repositories.extend(additional_repositories)
+
     sync_repositories(repositories)
 
