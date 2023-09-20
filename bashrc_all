@@ -41,6 +41,7 @@ weather()
 }
 
 export PATH=$PATH:$HOME/linuxcommands/scripts/
+export PATH=$PATH:$HOME/linuxcommands/ai/pythonscripts/
 
 
 # Use cdd when you want to change to directory of the given filepath. This way you can avoid deleting the file name at the end.
