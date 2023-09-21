@@ -124,3 +124,14 @@ function gitdwmain()
 #bookmark https://direnv.net/
 eval "$(direnv hook bash)"
 
+
+function f()
+{
+    #cat $HOME/ngara-notes/frequentlyusedcommands.txt
+    #echo "----------------------------------------------"
+    grep $1 $HOME/n/frequentlyusedcommands.txt
+    grep $1 $HOME/n/automation/frequentlyusedcommands.txt
+    grep $1 $HOME/n/aspen/freq.txt
+    grep $1 $HOME/n/aspen/RDP-8879-AINotifications/usefulcommands.txt
+}
+
