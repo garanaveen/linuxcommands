@@ -43,6 +43,7 @@ def sync_repositories(repositories):
             print("Outgoing changes detected:")
             print(outgoing_changes)
             print("Sync stopped.")
+            return
         
         print("Repository is in sync.\n")
 
