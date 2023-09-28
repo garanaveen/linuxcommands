@@ -28,22 +28,18 @@ def sync_repositories(repositories):
         print(f"Checking repository: {repo_path}")
         
         if check_unstaged_changes(repo_path):
-            print("Repository has unstaged/uncommitted changes. Sync stopped.")
+            print(f"unstaged/uncommitted changes found in ****{repo_path}****")
             return
 
         incoming_changes = check_incoming_changes(repo_path, remote_name, branch_name)
         if incoming_changes:
-            print("Incoming changes detected:")
+            print(f"Incoming changes detected in ****{repo_path}****")
             print(incoming_changes)
-            print("Sync stopped.")
-            return
 
         outgoing_changes = check_outgoing_changes(repo_path, remote_name, branch_name)
         if outgoing_changes:
-            print("Outgoing changes detected:")
+            print(f"Outgoing changes detected: in ****{repo_path}****")
             print(outgoing_changes)
-            print("Sync stopped.")
-            return
         
         print("Repository is in sync.\n")
 
