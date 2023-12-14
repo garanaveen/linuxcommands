@@ -39,7 +39,7 @@ def generate_bash_script(file_paths):
     return script
 
 # List of patterns to search for
-patterns = ["aliases", "bashrc"]
+patterns = ["aliases", "bashrc", ".bashrc"]
 
 # Directory to start searching from
 directory = os.getcwd()

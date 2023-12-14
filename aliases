@@ -1,5 +1,6 @@
 #!/bin/bash
 # Personal
+alias s='source ~/sourcing_script.sh; source ~/.bashrc'
 alias lsl='ls -ltr'
 
 alias q='fold -w 80 -s ~/tmp/a | less'
@@ -72,7 +73,7 @@ sed 's^origin.*git@^https://^' | \
 # function gitinc { git fetch && git log main..origin/main ;}
 
 # Speedy aliases,
-alias ff='~/linuxcommands/scripts/findwithname.sh'
+alias ff='source ~/linuxcommands/scripts/findwithname.sh'
 alias vimff='~/linuxcommands/scripts/vimfindfirstoccurance.sh'
 alias cdff='source ~/linuxcommands/scripts/cdfindfirstoccurance.sh' #Its important to source this as there is a 'cd' command inside of this script.
 alias cddff='source ~/linuxcommands/scripts/cddfindfirstoccurance.sh' #Its important to source this as there is a 'cd' command inside of this script.
@@ -121,3 +122,5 @@ alias st='speaker-test  --nperiods 10 --nloops 1'
 alias soundtest='speaker-test  --nperiods 10 --nloops 1'
 
 alias gll='source ~/linuxcommands/scripts/generategithublink.sh'
+
+alias brsoverview='~/linuxcommands/ai/pythonscripts/brsoverview.py'

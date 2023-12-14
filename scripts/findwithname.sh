@@ -20,10 +20,8 @@ find . \
 -o -name .git -prune \
 -o -iname "*$1*"  -print
 
-exit
 
 FULLPATH=$(echo ${PWD}/${FIRST_FILE_PATH} | sed 's:\./::g')
-echo ${FULLPATH} | xclip -selection clipboard
+echo ${FULLPATH} | pbcopy 
 echo "\"${FULLPATH}\" copied to clipboard"
-
 
