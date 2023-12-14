@@ -21,7 +21,9 @@ find . \
 -o -iname "*$1*"  -print
 
 
-FULLPATH=$(echo ${PWD}/${FIRST_FILE_PATH} | sed 's:\./::g')
-echo ${FULLPATH} | pbcopy 
-echo "\"${FULLPATH}\" copied to clipboard"
+if ! [[ -z ${FIRST_FILE_PATH} ]]; then
+   FULLPATH=$(echo ${PWD}/${FIRST_FILE_PATH} | sed 's:\./::g')
+   echo ${FULLPATH} | xclip -selection clipboard
+   echo "\"${FULLPATH}\" copied to clipboard"
+fi
 
