@@ -1,4 +1,11 @@
 #!/bin/bash
+#ai/pythonscripts
+alias vimgit='python3 $HOME/linuxcommands/ai/pythonscripts/vimgit.py'
+alias brsoverview='~/linuxcommands/ai/pythonscripts/brsoverview.py'
+
+Other scripts, 
+alias gll='source ~/linuxcommands/scripts/generategithublink.sh'
+
 # Personal
 alias s='source ~/sourcing_script.sh; source ~/.bashrc'
 alias lsl='ls -ltr'
@@ -39,7 +46,7 @@ alias 8cd='cd `ls -dtr */  |tail -8 |head -1`'
 alias gitlog='git log --pretty=oneline --graph'
 alias gitkraken='gitkraken -p .'
 alias gits='git status'
-alias gitc='/home/ngara/linuxcommands/ai/bashscripts/gitautocommit.sh'
+alias gitc='bash /home/ngara/linuxcommands/ai/bashscripts/gitautocommit.sh'
 alias gitb='git branch --show-current'
 alias gitinc='git fetch && git log ..origin/main'
 # alias gitinc='git log main..origin/main'
@@ -121,6 +128,4 @@ alias nu='cd $HOME/nu'
 alias st='speaker-test  --nperiods 10 --nloops 1'
 alias soundtest='speaker-test  --nperiods 10 --nloops 1'
 
-alias gll='source ~/linuxcommands/scripts/generategithublink.sh'
 
-alias brsoverview='~/linuxcommands/ai/pythonscripts/brsoverview.py'

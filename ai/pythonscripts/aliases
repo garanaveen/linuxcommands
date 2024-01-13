@@ -1,0 +1,1 @@
+alias vimgit='python3 $HOME/linuxcommands/ai/pythonscripts/vimgit.py'
