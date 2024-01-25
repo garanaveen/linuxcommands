@@ -7,8 +7,6 @@ python vimgit.py search_pattern
 
 With alias
 vimgit search_pattern
-
-TODO : Move this script to linuxcommands repository.
 """
 
 def main():
