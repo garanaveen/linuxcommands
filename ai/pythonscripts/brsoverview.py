@@ -13,9 +13,10 @@ pattern = re.compile(r"^(.*\s)?(Sub|Function)(\s.*)?$", re.IGNORECASE)
 # Read the BrightScript file and print lines with "Sub" or "Function"
 with open(args.file_path, "r") as file:
     for line in file:
+        originalLine = line
         line = line.strip()  # Remove leading/trailing whitespace
         if pattern.match(line) and "end " not in line.lower():
             print(line)
         elif args.optional_string and args.optional_string.lower() in line.lower():
-            print(line)
+            print(originalLine)
 

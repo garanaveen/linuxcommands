@@ -8,6 +8,8 @@ EXCLUDE_DIR2=Dir2-ReplaceThisAsPerYourNeeds
 #-----------------------------------------------------------------------------------
 #This is when user provides a path that might not be relative to current directory.
 #Ex. "vimff b/parent/child/FileName.txt" will execute "vim child/FileName.txt". i.e. it will trim top directories until a valid relative path is found.
+#This is useful to easily open file from git diff output as follows,
+#diff --git a/reponame/components/FileName.xml b/reponame/components/FileName.xml
 
 input_path="$1"
 

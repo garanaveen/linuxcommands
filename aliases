@@ -118,9 +118,8 @@ alias gitbg='git branch --all | grep'
 alias n='cd $HOME/n'
 alias nu='cd $HOME/nu'
 
-alias st='speaker-test  --nperiods 10 --nloops 1'
-alias soundtest='speaker-test  --nperiods 10 --nloops 1'
+alias soundtest='speaker-test --nperiods 10 --nloops 1'
 
 alias gll='source ~/linuxcommands/scripts/generategithublink.sh'
 
-alias brsoverview='~/linuxcommands/ai/pythonscripts/brsoverview.py'
+alias brsoverview='python3 ~/linuxcommands/ai/pythonscripts/brsoverview.py'
