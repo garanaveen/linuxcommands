@@ -62,3 +62,21 @@ with open("sourcing_script.sh", "w") as file:
 
 print("Bash script generated successfully!")
 
+#TODO : Skip these directories that are specific to Mac.
+#Applications
+#Desktop
+#Development
+#Documents
+#Downloads
+#Library
+#Movies
+#Music
+#OneDrive - Roku Inc
+#Perforce
+#Pictures
+#Postman
+#Public
+#archive
+#nobuildfirmware
+#tmp
+#wdmycloud
