@@ -1,0 +1,29 @@
+#!/bin/bash
+alias b='cd ..'
+alias bb='cd ../..'
+alias bbb='cd ../../..'
+alias bbbb='cd ../../../..'
+alias bbbbb='cd ../../../../../'
+alias 4b='cd ../../../../'
+alias 5b='cd ../../../../../'
+alias 6b='cd ../../../../../../'
+alias 7b='cd ../../../../../../../'
+
+# Type "ls -tr". Then do cd3 to cd in to the 3rd director.
+alias cd1='cd `ls -dtr */ |head -1 |tail -1`'
+alias cd2='cd `ls -dtr */ |head -2 |tail -1`'
+alias cd3='cd `ls -dtr */ |head -3 |tail -1`'
+alias cd4='cd `ls -dtr */ |head -4 |tail -1`'
+alias cd5='cd `ls -dtr */ |head -5 |tail -1`'
+alias cd6='cd `ls -dtr */ |head -6 |tail -1`'
+
+# Type "ls -tr". Then do cd3 to cd in to the 3rd last director.
+alias 1cd='cd `ls -dtr */  |tail -1 |head -1`'
+alias 2cd='cd `ls -dtr */  |tail -2 |head -1`'
+alias 3cd='cd `ls -dtr */  |tail -3 |head -1`'
+alias 4cd='cd `ls -dtr */  |tail -4 |head -1`'
+alias 5cd='cd `ls -dtr */  |tail -5 |head -1`'
+alias 6cd='cd `ls -dtr */  |tail -6 |head -1`'
+alias 7cd='cd `ls -dtr */  |tail -7 |head -1`'
+alias 8cd='cd `ls -dtr */  |tail -8 |head -1`'
+
