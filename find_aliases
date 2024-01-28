@@ -1,0 +1,21 @@
+
+# Speedy aliases,
+alias ff='source ~/linuxcommands/scripts/findwithname.sh'
+alias vimff='~/linuxcommands/scripts/vimfindfirstoccurance.sh'
+alias cdff='source ~/linuxcommands/scripts/cdfindfirstoccurance.sh' #Its important to source this as there is a 'cd' command inside of this script.
+alias cddff='source ~/linuxcommands/scripts/cddfindfirstoccurance.sh' #Its important to source this as there is a 'cd' command inside of this script.
+alias catff='source ~/linuxcommands/scripts/catfindfirstoccurance.sh' #Its important to source this as there is a 'cd' command inside of this script.
+alias fp='source ~/linuxcommands/scripts/fullpath.sh'
+alias fullpath='source ~/linuxcommands/scripts/fullpath.sh'
+
+
+alias ff1='~/linuxcommands/scripts/findwithnamemaxdepth.sh 1'
+alias ff2='~/linuxcommands/scripts/findwithnamemaxdepth.sh 2'
+alias ff3='~/linuxcommands/scripts/findwithnamemaxdepth.sh 3'
+alias ff4='~/linuxcommands/scripts/findwithnamemaxdepth.sh 4'
+alias ff5='~/linuxcommands/scripts/findwithnamemaxdepth.sh 5'
+alias ff6='~/linuxcommands/scripts/findwithnamemaxdepth.sh 6'
+alias ff7='~/linuxcommands/scripts/findwithnamemaxdepth.sh 7'
+
+alias findallfiles='find . -type f'
+alias findalldirs='find . -type d'
