@@ -1,7 +1,7 @@
 import os
 
-#Run this script from your home directory as follows, 
-#python linuxcommands/scripts/generatebashscript.py 
+#Run this script from your home directory as follows,
+#python linuxcommands/scripts/generatebashscript.py
 #This generates sourcing_script.sh in the directory where this script is ran from.
 #Include this in your .bashrc file.
 
@@ -17,6 +17,12 @@ def search_files(patterns, directory, min_depth, max_depth):
 
         # Skip processing symbolic link directories
         if os.path.islink(root):
+            continue
+        #Skip processing hidden directories
+        if root.startswith('.'):
+            continue
+
+        if isMacDirectory(root):
             continue
 
         for file in files:
@@ -37,6 +43,26 @@ def generate_bash_script(file_paths):
     for file_path in file_paths:
         script += "source {}\n".format(file_path)
     return script
+
+def isMacDirectory(root) -> bool:
+    return root.endswith("Applications") or \
+        root.endswith("Desktop") or \
+        root.endswith("Development") or \
+        root.endswith("Documents") or \
+        root.endswith("Downloads") or \
+        root.endswith("Library") or \
+        root.endswith("Movies") or \
+        root.endswith("Music") or \
+        root.endswith("OneDrive - Roku Inc") or \
+        root.endswith("Perforce") or \
+        root.endswith("Pictures") or \
+        root.endswith("Postman") or \
+        root.endswith("Public") or \
+        root.endswith("archive") or \
+        root.endswith("nobuildfirmware") or \
+        root.endswith("tmp") or \
+        root.endswith("wdmycloud")
+
 
 # List of patterns to search for
 patterns = ["aliases", "bashrc", ".bashrc"]
@@ -62,21 +88,3 @@ with open("sourcing_script.sh", "w") as file:
 
 print("Bash script generated successfully!")
 
-#TODO : Skip these directories that are specific to Mac.
-#Applications
-#Desktop
-#Development
-#Documents
-#Downloads
-#Library
-#Movies
-#Music
-#OneDrive - Roku Inc
-#Perforce
-#Pictures
-#Postman
-#Public
-#archive
-#nobuildfirmware
-#tmp
-#wdmycloud
