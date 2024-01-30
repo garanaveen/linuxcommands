@@ -2,7 +2,10 @@
 
 eval "$(ssh-agent -s)"
 
-KEYS=`ls $HOME/.ssh/id_ed25519-* | grep -v pub`
+KEYS=($HOME/.ssh/id_ed25519-*)
+
+# Exclude entries that end with ".pub"
+KEYS=("${KEYS[@]//*\.pub/}")
 
 for key in "${KEYS[@]}"
 do
