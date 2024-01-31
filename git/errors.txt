@@ -1,0 +1,11 @@
+-------------------------------------------
+remote: The project you were looking for could not be found or you don't have permission to view it.
+remote: 
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+SOLUTION: Add the following to .bashrc file
+source /home/ngara/linuxcommands/addsshkeys.sh
+-------------------------------------------
