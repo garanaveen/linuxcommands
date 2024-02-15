@@ -4,23 +4,26 @@ ssh-add -l -E md5
 
 Convention for the name of the key added.
 machinename - ubuntu
-workorpersonal - work/personal
+workorpersonal - personal
+subidentifier - eng
+Username - garanaveen
+platformname - gitlab/github
 
 Examples:
-mac-personal
-ubuntu-roku
+mac-personal-subidentifier-garanaveen-github
+ubuntu-personal-subidentifier-garanaveen-github
 
 
 -------------------------------------------------
 Adding ssh keys for github/gitlab, using new ed25519 protocol.
 -------------------------------------------------
 https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-ssh-keygen -t ed25519 -C "machinename-workorpersonal"
+ssh-keygen -t ed25519 -C "machinename-workorpersonal-subidentifier-username-platformname"
 eval "$(ssh-agent -s)"
 Linux,
-ssh-add ~/.ssh/id_ed25519-machinename-workorpersonal
+ssh-add ~/.ssh/id_ed25519
 Mac,
-ssh-add --apple-use-keychain ~/.ssh/id_ed25519-machinename-workorpersonal
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 
 
 Add ~/.ssh/id_ed25519.pub to the github/lab.com settings.
