@@ -39,3 +39,7 @@ git config --global user.name
 How to add ssh keys for multiple github accounts?
 https://gist.github.com/jexchan/2351996
 
+ssh -T git@github.com
+https://gitlab-mediatek.tools.roku.com/
+
+ssh -T git@gitlab-mediatek.tools.roku.com/
