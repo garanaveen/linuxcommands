@@ -1,5 +1,7 @@
 #!/bin/bash
 
+./utils.sh
+
 eval "$(ssh-agent -s)"
 
 KEYS=($HOME/.ssh/id_ed25519-*)
@@ -10,7 +12,11 @@ KEYS=("${KEYS[@]//*\.pub/}")
 for key in "${KEYS[@]}"
 do
    echo "key : $key"
-   ssh-add $key
+   if [[ $(uname) == "Darwin" ]]; then
+      ssh-add --apple-use-keychain $key
+   else
+      ssh-add $key
+   fi
 done
 
 
