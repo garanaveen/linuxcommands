@@ -62,7 +62,7 @@ if __name__ == "__main__":
 
     # Define the initial repositories in .syncrepos format
     repositories = [
-        ("/home/ngara/git/garanaveen/personal","origin","master"),
+        ("~/git/garanaveen/personal","origin","master"),
         # Add more repositories as needed
     ]
 
