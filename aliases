@@ -17,7 +17,7 @@ alias qaaa='fold -w 50 -s ~/tmp/aaa | less'
 # Git aliases,
 alias gitlog='git log --pretty=oneline --graph'
 alias gitkraken='gitkraken -p .'
-alias gits='git status'
+alias gits='git status; git diff | grep TEMP; git diff | grep debug'
 alias gitc='bash /home/ngara/linuxcommands/ai/bashscripts/gitautocommit.sh'
 alias gitb='git branch --show-current'
 alias gitinc='git fetch && git log ..origin/main'
@@ -26,7 +26,7 @@ alias gitout='git log remotes/origin/"$(git symbolic-ref --short HEAD)".."$(git 
 alias gitpush='git push -u origin main'
 alias gitdiffwithmain='git diff main.."$(git symbolic-ref --short HEAD)"'
 alias gitdiffwithmaster='git diff master.."$(git symbolic-ref --short HEAD)"'
-alias syncrepos='python /home/ngara/linuxcommands/ai/pythonscripts/syncgitrepos.py'
+alias syncrepos='python /home/ngara/linuxcommands/ai/pythonscripts/syncgitrepos.py; echo "debbit"'
 alias listtests='python /home/ngara/linuxcommands/ai/pythonscripts/listtests.py'
 
 

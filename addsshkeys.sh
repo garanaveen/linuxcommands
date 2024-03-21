@@ -12,8 +12,11 @@ KEYS=("${KEYS[@]//*\.pub/}")
 for key in "${KEYS[@]}"
 do
    echo "key : $key"
-   ssh-add $key
-   ssh-add --apple-use-keychain $key
+   if [[ $(uname) == "Darwin" ]]; then
+      ssh-add --apple-use-keychain $key
+   else
+      ssh-add $key
+   fi
 done
 
 
