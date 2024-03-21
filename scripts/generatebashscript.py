@@ -40,6 +40,7 @@ def search_files(patterns, directory, min_depth, max_depth):
 
 def generate_bash_script(file_paths):
     script = "#!/bin/bash\n\n"
+    script += "#Run source sourcing_script.sh\n"
     for file_path in file_paths:
         script += "source {}\n".format(file_path)
     return script
