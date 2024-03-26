@@ -1,7 +1,5 @@
 #!/bin/bash
 
-./utils.sh
-
 eval "$(ssh-agent -s)"
 
 KEYS=($HOME/.ssh/id_ed25519-*)
