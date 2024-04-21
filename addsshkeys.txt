@@ -43,6 +43,6 @@ How to add ssh keys for multiple github accounts?
 https://gist.github.com/jexchan/2351996
 
 ssh -T git@github.com
+#todo move the following to another repo.
 https://gitlab-mediatek.tools.roku.com/
-
 ssh -T git@gitlab-mediatek.tools.roku.com/
