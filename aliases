@@ -29,6 +29,8 @@ alias gitdiffwithmaster='git diff master.."$(git symbolic-ref --short HEAD)"'
 alias syncrepos='python /home/ngara/linuxcommands/ai/pythonscripts/syncgitrepos.py; echo "debbit"'
 alias listtests='python /home/ngara/linuxcommands/ai/pythonscripts/listtests.py'
 
+alias bench='cd /home/ngara/thirdpartytools/benchmark'
+
 
 
 function gitout { 
