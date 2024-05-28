@@ -3,7 +3,7 @@ import os
 #Run this script from your home directory as follows,
 #python linuxcommands/scripts/generatebashscript.py
 #This generates sourcing_script.sh in the directory where this script is ran from.
-#Include this in your .bashrc file.
+#Include this in your .bashrc file for linux or $HOME/.bash_profile on mac.
 
 def search_files(patterns, directory, min_depth, max_depth):
     matches = []

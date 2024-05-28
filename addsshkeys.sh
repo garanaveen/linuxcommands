@@ -17,4 +17,4 @@ do
    fi
 done
 
-
+echo "Consider running <source addsshkeys.sh> if this doesn't work."

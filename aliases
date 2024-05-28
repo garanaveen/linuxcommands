@@ -29,6 +29,8 @@ alias gitdiffwithmaster='git diff master.."$(git symbolic-ref --short HEAD)"'
 alias syncrepos='python3 $HOME/linuxcommands/ai/pythonscripts/syncgitrepos.py; echo "debbit"'
 alias listtests='python3 $HOME/linuxcommands/ai/pythonscripts/listtests.py'
 
+alias bench='cd /home/ngara/thirdpartytools/benchmark'
+
 
 
 function gitout { 
@@ -80,3 +82,4 @@ alias soundtest='speaker-test --nperiods 10 --nloops 1'
 
 
 alias brsoverview='python3 ~/linuxcommands/ai/pythonscripts/brsoverview.py'
+
