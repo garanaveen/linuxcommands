@@ -118,9 +118,6 @@ function gitdwmain()
    git diff ${MAIN_BRANCH}..${CURRENT_BRANCH}
 }
 
-#bookmark https://direnv.net/
-eval "$(direnv hook bash)"
-
 
 function f()
 {

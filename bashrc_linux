@@ -6,3 +6,6 @@ alias pbpaste='xclip -selection clipboard -o'
 pyclean () {
     find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
 }
+
+#bookmark https://direnv.net/ #todo
+#eval "$(direnv hook bash)"
