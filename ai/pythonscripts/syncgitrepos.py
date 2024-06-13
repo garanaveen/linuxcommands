@@ -1,6 +1,8 @@
 import os
 import subprocess
 
+#todo: Ignore lines in $HOME/.syncrepos that start with '#' character
+
 def check_unstaged_changes(repo_path):
     os.chdir(repo_path)
     result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
