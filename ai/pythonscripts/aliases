@@ -1,1 +1,2 @@
 alias vimgit='python3 $HOME/linuxcommands/ai/pythonscripts/vimgit.py'
+alias vimgd='python3 $HOME/linuxcommands/ai/pythonscripts/vimgitdiff.py'
