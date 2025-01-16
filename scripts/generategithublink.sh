@@ -5,7 +5,7 @@ git remote -v \
 |sed 's|com:|com/|' \
 |sed 's|origin.*git@github|https://github|' \
 |sed 's|origin.*git@gitlab.eng|https://gitlab.eng|' \
-|sed 's/.git (fetch)//' \
+|sed 's/ (fetch)//' \
 |sed '/gitlab/s|$|/-/blob/main/|' \
 |sed '/github.com/s|$|/blob/master/|' \
 > ~/tmp/gll.txt
