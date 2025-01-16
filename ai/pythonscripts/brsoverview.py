@@ -1,6 +1,7 @@
 import argparse
 import re
 
+#todo : Need to support a file ./search.brs or ~/search.brs which contains all regex that needs to be filtered.
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description="Print lines with Sub or Function declarations from a BrightScript file")
 parser.add_argument("file_path", help="Path to the BrightScript file")
