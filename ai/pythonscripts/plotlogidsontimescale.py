@@ -31,7 +31,15 @@ def plot_logs(timestamps):
     
     # Add annotations and emphasis
     for i, ts in enumerate(timestamps):
-        plt.annotate(ts, (x_positions[i], 1), textcoords="offset points", xytext=(0, 10), ha="center")
+        plt.annotate(
+            ts, 
+            (x_positions[i], 1), 
+            textcoords="offset points", 
+            xytext=(0, 10), 
+            ha="center", 
+            rotation=90,  # Rotate the text vertically
+            fontsize=9    # Adjust font size if needed
+        )
         if i > 0 and (times[i] - times[i-1]).total_seconds() <= 2:
             plt.plot(x_positions[i-1:i+1], [1, 1], color="red", linewidth=2, label="Close Logs" if i == 1 else None)
     
