@@ -53,8 +53,8 @@ def plot_logs(timestamps):
 
 def main():
     parser = argparse.ArgumentParser(description="Filter logs and plot time-based visualization.")
-    parser.add_argument("file", help="Path to the log file.")
-    parser.add_argument("logid", help="Log ID to filter.")
+    parser.add_argument("--file", required=True, help="Path to the log file.")
+    parser.add_argument("--logid", required=True, help="Log ID to filter.")
     args = parser.parse_args()
     
     timestamps = parse_logs(args.file, args.logid)
