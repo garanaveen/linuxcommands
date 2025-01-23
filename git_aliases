@@ -11,3 +11,7 @@ git config --global alias.unstage 'reset --'
 #If the alias is supposed to be a external command.
 git config --global alias.visual '!gitk'
 git config --global core.editor "vim"
+
+#show git repo's recent branches
+alias gitrb='git for-each-ref --sort=-committerdate refs/heads/ | head'
+
