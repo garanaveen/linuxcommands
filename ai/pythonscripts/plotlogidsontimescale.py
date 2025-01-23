@@ -65,7 +65,7 @@ def parse_logs(file_path, log_id):
         list: List of timestamps matching the log ID.
     """
     logs = []
-    pattern = re.compile(r"(\d{2}:\d{2}:\d{2}\.\d{3}) \*\[" + re.escape(log_id) + r"\] SpecificFunction\(\) - .*")
+    pattern = re.compile(r"(\d{2}:\d{2}:\d{2}\.\d{3}) \*\[" + re.escape(log_id))
     
     with open(file_path, "r") as file:
         for line in file:
