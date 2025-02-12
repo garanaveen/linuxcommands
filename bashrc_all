@@ -15,8 +15,6 @@ set keymap vi-command
 
 set -o vi
 
-bind -x '"\C-l": clear'
-
 function countdown(){
    date1=$((`date +%s` + $1)); 
    while [ "$date1" -ge `date +%s` ]; do 

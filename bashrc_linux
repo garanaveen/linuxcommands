@@ -7,5 +7,7 @@ pyclean () {
     find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
 }
 
+bind -x '"\C-l": clear'
+
 #bookmark https://direnv.net/ #todo
 #eval "$(direnv hook bash)"
