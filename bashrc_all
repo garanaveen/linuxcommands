@@ -13,8 +13,6 @@ export VISUAL="/usr/bin/vim"
 set editing-mode vi
 set keymap vi-command
 
-set -o vi
-
 function countdown(){
    date1=$((`date +%s` + $1)); 
    while [ "$date1" -ge `date +%s` ]; do 
