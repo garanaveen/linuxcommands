@@ -1,3 +1,7 @@
+
+echo "Adding this line just in case I do <source addsshkeys.txt> by mistake"
+exit
+
 How to check what keys are added?
 Linux,
 ssh-add -l -E md5
