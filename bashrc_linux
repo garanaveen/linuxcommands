@@ -7,5 +7,14 @@ pyclean () {
     find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
 }
 
-#bookmark https://direnv.net/ #todo
+#Set vi as the default terminal mode.
+export EDITOR="/usr/bin/vim"
+export VISUAL="/usr/bin/vim"
+set editing-mode vi
+set keymap vi-command
+set -o vi
+bind -x '"\C-l": clear' #This only works for linux. Need to do different command for mac.
+
+#bookmark https://direnv.net/ # @todo
 #eval "$(direnv hook bash)"
+

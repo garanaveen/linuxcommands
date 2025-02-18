@@ -1,0 +1,13 @@
+#Set vi as the default terminal mode
+export EDITOR="/usr/bin/vim"
+export VISUAL="/usr/bin/vim"
+set editing-mode vi
+set keymap vi-command
+set -o vi
+#This only works for mac. Different command for linux.
+bind -m vi-command '"\C-l": clear-screen'
+bind -m vi-insert '"\C-l": clear-screen'
+
+
+export PATH=$PATH:/opt/homebrew/bin/
+
