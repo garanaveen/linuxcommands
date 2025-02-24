@@ -39,4 +39,9 @@ let @l=']]ologger.logConsole<"%?:%?">("fw00000", __PRETTY_FUNCTION__, __LINE__);
 
 iab jira https://roku.atlassian.net/browse/
 
+" *.jrnl entries are in this format - "[2025-01-01 09:00]". Set all these characters as part of word to make navigating the cursor past of this timestamp easy.
+augroup CustomIsKeyword
+  autocmd!
+  autocmd BufRead,BufNewFile *.jrnl setlocal iskeyword=@,48-57,-,:,[,]
+augroup END
 
