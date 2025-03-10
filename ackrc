@@ -17,6 +17,8 @@
 --ignore-dir=build
 --ignore-dir=thirdparty
 --ignore-dir=.git
+--ignore-dir=.ruff_cache
+--ignore-dir=.mypy_cache
 
 --ignore-file=ext:excludefromsearch
 
