@@ -73,7 +73,7 @@ directory = os.getcwd()
 
 # Minimum and maximum depth for searching files
 min_depth = 0
-max_depth = 3
+max_depth = 5
 
 # Search for matching files
 matched_files = search_files(patterns, directory, min_depth, max_depth)
