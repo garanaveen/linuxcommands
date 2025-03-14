@@ -2,6 +2,7 @@
 
 # Get today's date
 current_date=$(date +'%Y-%m-%d')
+current_time=$(date +'%H-%M')
 
 # Get the hostname
 hostname=$(hostname)
