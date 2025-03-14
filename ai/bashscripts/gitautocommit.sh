@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get today's date
-current_time=$(date +'%Y-%m-%d:%H-%M')
+current_time=$(date +'%Y-%m-%d_%H:%M')
 
 # Get the hostname
 hostname=$(hostname)
