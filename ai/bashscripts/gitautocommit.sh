@@ -1,14 +1,13 @@
 #!/bin/bash
 
 # Get today's date
-current_date=$(date +'%Y-%m-%d')
-current_time=$(date +'%H-%M')
+current_time=$(date +'%Y-%m-%d:%H-%M')
 
 # Get the hostname
 hostname=$(hostname)
 
 # Create the commit message
-commit_message="Auto commit - Date: $current_date, Host: $hostname"
+commit_message="Auto commit - Date: $current_time, Host: $hostname"
 
 # Show the changes that would be committed
 git status
