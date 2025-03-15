@@ -26,6 +26,7 @@ This isn't an exact format to follow but more of an idea. Use the best possible 
 import os
 import xml.etree.ElementTree as ET
 from anytree import Node, RenderTree
+from collections import defaultdict
 
 def find_xml_files(start_dir):
     """Walk through directories and find all XML files."""
@@ -49,23 +50,45 @@ def parse_xml_for_scripts(xml_file):
         print(f"Error parsing {xml_file}: {e}")
     return brs_files
 
-def build_tree(start_dir):
+def build_tree(start_dir, inclusion_threshold):
     """Build a tree structure representing XML and .brs file relationships."""
     xml_files = find_xml_files(start_dir)
-    root_node = Node("Project Root")
-    
+    brs_inclusion_count = defaultdict(int)
+    xml_to_brs_map = {}
+
+    # First pass: Count how many times each .brs file is included
     for xml_file in xml_files:
-        xml_node = Node(os.path.basename(xml_file), parent=root_node)
         brs_files = parse_xml_for_scripts(xml_file)
+        xml_to_brs_map[xml_file] = brs_files
         for brs_file in brs_files:
-            Node(brs_file, parent=xml_node)
-    
+            brs_inclusion_count[brs_file] += 1
+
+    # Second pass: Build the tree, excluding .brs files that exceed the threshold
+    root_node = Node("Project Root")
+    for xml_file, brs_files in xml_to_brs_map.items():
+        xml_node = Node(os.path.basename(xml_file), parent=root_node)
+        for brs_file in brs_files:
+            if brs_inclusion_count[brs_file] <= inclusion_threshold:
+                Node(brs_file, parent=xml_node)
+
     return root_node
 
 def main():
+    import argparse
+
+    # Set up argument parsing
+    parser = argparse.ArgumentParser(description="Generate a tree diagram of XML and .brs file relationships.")
+    parser.add_argument(
+        "--inclusion-threshold",
+        type=int,
+        default=3,
+        help="Maximum number of XML files a .brs file can be included in before it is excluded from the hierarchy."
+    )
+    args = parser.parse_args()
+
     start_dir = os.getcwd()
-    tree_root = build_tree(start_dir)
-    
+    tree_root = build_tree(start_dir, args.inclusion_threshold)
+
     # Render the tree structure
     for pre, fill, node in RenderTree(tree_root):
         print(f"{pre}{node.name}")
