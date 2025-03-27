@@ -4,7 +4,7 @@ alias vimgit='python3 $HOME/linuxcommands/ai/pythonscripts/vimgit.py'
 alias brsoverview='~/linuxcommands/ai/pythonscripts/brsoverview.py'
 
 #Other scripts, 
-alias gll='source ~/linuxcommands/scripts/generategithublink.sh'
+alias gll='python3 ~/linuxcommands/ai/pythonscripts/generategithublink.py'
 
 # Personal
 alias s='source ~/sourcing_script.sh; source ~/.bashrc'
