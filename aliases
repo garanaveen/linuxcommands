@@ -31,6 +31,8 @@ alias listtests='python3 $HOME/linuxcommands/ai/pythonscripts/listtests.py'
 
 alias bench='cd /home/ngara/thirdpartytools/benchmark'
 
+alias openbookmarks='python3 ~/linuxcommands/ai/pythonscripts/openbookmarks.py'
+
 
 
 function gitout { 
