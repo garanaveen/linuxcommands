@@ -17,7 +17,7 @@ alias qaaa='fold -w 50 -s ~/tmp/aaa | less'
 # Git aliases,
 alias gitlog='git log --pretty=oneline --graph'
 alias gitkraken='gitkraken -p .'
-alias gits='git status; git diff | grep TEMP; git diff | grep debug ; git diff | grep todo'
+alias gits='git status; git diff | grep TEMP; git diff | grep todo'
 alias gitc='bash $HOME/linuxcommands/ai/bashscripts/gitautocommit.sh'
 alias gitb='git branch --show-current'
 alias gitinc='git fetch && git log ..origin/main'
