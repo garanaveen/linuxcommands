@@ -12,6 +12,7 @@
 --type-set=patch=.patch
 --type-set=brs=.brs
 --type-set=yml=.yml
+--type-set=jrnl=.jrnl
 
 --ignore-dir=jdx
 --ignore-file=is:tags
