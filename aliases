@@ -2,7 +2,7 @@
 #ai/pythonscripts
 alias vimgit='python3 $HOME/linuxcommands/ai/pythonscripts/vimgit.py'
 alias brsoverview='~/linuxcommands/ai/pythonscripts/brsoverview.py'
-alias todo='python3 /home/ngara/linuxcommands/ai/pythonscripts/search-tags-in-jrnl.py'
+alias todo='python3 $HOME/linuxcommands/ai/pythonscripts/search-tags-in-jrnl.py'
 
 #Other scripts, 
 alias gll='python3 ~/linuxcommands/ai/pythonscripts/generategithublink.py'
