@@ -1,13 +1,11 @@
 import subprocess
 import os
 
-# @todo : When "todo" is typed, this script searches all jrnl files. Instead, it should only search jrnl files that are in the current directory and its child directories. This allows the user to go in to a particular directory and search jrnl files only in that directory.
-
 # Define the tags to search for and their order
 tags = ["@urgent", "@todo", "@track"]
 
-def get_journals():
-    """Retrieve the list of journals using 'jrnl --list'."""
+def get_journals_in_current_directory():
+    """Retrieve the list of journals and filter those in the current directory."""
     try:
         # Execute the jrnl command to list journals
         result = subprocess.run(
@@ -17,14 +15,17 @@ def get_journals():
             check=True
         )
         journals = {}
+        current_directory = os.getcwd()
         lines = result.stdout.strip().split("\n")
         for line in lines:
             if "->" in line:
                 # Parse journal name and file path
                 parts = line.split("->")
                 journal_name = parts[0].strip().lstrip("*").strip()
-                journal_path = parts[1].strip()
-                journals[journal_name] = os.path.expandvars(journal_path)
+                journal_path = os.path.expandvars(parts[1].strip())
+                # Include only journals within the current directory
+                if journal_path.startswith(current_directory):
+                    journals[journal_name] = journal_path
         return journals
     except subprocess.CalledProcessError as e:
         print(f"Error retrieving journals: {e}")
@@ -46,10 +47,10 @@ def search_tag(journal_name, tag):
         return ""
 
 def main():
-    # Get the list of journals
-    journals = get_journals()
+    # Get the list of journals in the current directory
+    journals = get_journals_in_current_directory()
     if not journals:
-        print("No journals found.")
+        print("No journals found in the current directory.")
         return
 
     # Dictionary to store results for each tag
@@ -72,4 +73,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
