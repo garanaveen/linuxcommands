@@ -1,6 +1,8 @@
 import subprocess
 import os
 
+# @todo : When "todo" is typed, this script searches all jrnl files. Instead, it should only search jrnl files that are in the current directory and its child directories. This allows the user to go in to a particular directory and search jrnl files only in that directory.
+
 # Define the tags to search for and their order
 tags = ["@urgent", "@todo", "@track"]
 
