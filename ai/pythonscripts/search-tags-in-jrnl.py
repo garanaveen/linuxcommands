@@ -5,7 +5,13 @@ import os
 tags = ["@urgent", "@todo", "@track"]
 
 def get_journals_in_current_directory():
-    """Retrieve the list of journals and filter those in the current directory."""
+    """
+    Retrieve the list of journals using 'jrnl --list' and filter those located in the current directory.
+
+    Returns:
+        dict: A dictionary where keys are journal names and values are their file paths,
+              filtered to include only journals within the current directory.
+    """
     try:
         # Execute the jrnl command to list journals
         result = subprocess.run(
@@ -15,14 +21,14 @@ def get_journals_in_current_directory():
             check=True
         )
         journals = {}
-        current_directory = os.getcwd()
-        lines = result.stdout.strip().split("\n")
+        current_directory = os.getcwd()  # Get the current working directory
+        lines = result.stdout.strip().split("\n")  # Split the output into lines
         for line in lines:
             if "->" in line:
                 # Parse journal name and file path
                 parts = line.split("->")
-                journal_name = parts[0].strip().lstrip("*").strip()
-                journal_path = os.path.expandvars(parts[1].strip())
+                journal_name = parts[0].strip().lstrip("*").strip()  # Extract journal name
+                journal_path = os.path.expandvars(parts[1].strip())  # Expand environment variables in the path
                 # Include only journals within the current directory
                 if journal_path.startswith(current_directory):
                     journals[journal_name] = journal_path
@@ -32,7 +38,17 @@ def get_journals_in_current_directory():
         return {}
 
 def search_tag(journal_name, tag):
-    """Search for entries with a specific tag in a journal."""
+    """
+    Search for entries with a specific tag in a journal using the 'jrnl' command.
+
+    Args:
+        journal_name (str): The name of the journal to search in.
+        tag (str): The tag to search for (e.g., '@todo', '@urgent').
+
+    Returns:
+        str: The output of the 'jrnl' command containing entries with the specified tag,
+             or an empty string if no entries are found or an error occurs.
+    """
     try:
         # Execute the jrnl command to search for the tag
         result = subprocess.run(
@@ -41,12 +57,16 @@ def search_tag(journal_name, tag):
             text=True,
             check=True
         )
-        return result.stdout.strip()
+        return result.stdout.strip()  # Return the output, stripped of extra whitespace
     except subprocess.CalledProcessError as e:
         print(f"Error searching for {tag} in {journal_name}: {e}")
         return ""
 
 def main():
+    """
+    Main function to retrieve journals in the current directory, search for specified tags,
+    and display the results organized by tag.
+    """
     # Get the list of journals in the current directory
     journals = get_journals_in_current_directory()
     if not journals:
