@@ -18,3 +18,4 @@ bind -x '"\C-l": clear' #This only works for linux. Need to do different command
 #bookmark https://direnv.net/ # @todo
 #eval "$(direnv hook bash)"
 
+PROMPT_COMMAND='history -a'

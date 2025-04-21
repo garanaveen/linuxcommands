@@ -1,3 +1,4 @@
 alias vimgit='python3 $HOME/linuxcommands/ai/pythonscripts/vimgit.py'
 alias vimgd='python3 $HOME/linuxcommands/ai/pythonscripts/vimgitdiff.py'
 alias abb='python3 $HOME/linuxcommands/ai/pythonscripts/abbreviation.py'
+alias jedit='python3 $HOME/linuxcommands/ai/pythonscripts/journal-edit.py'
