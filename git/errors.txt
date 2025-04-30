@@ -7,5 +7,5 @@ Please make sure you have the correct access rights
 and the repository exists.
 
 SOLUTION: Add the following to .bashrc file
-source /home/ngara/linuxcommands/addsshkeys.sh
+source /home/ngara/personal/addsshkeys.sh
 -------------------------------------------
