@@ -29,7 +29,7 @@ colorscheme desert
 "Download desert.vim from following link to ~/.vim/colors. 
 "https://www.vim.org/scripts/download_script.php?src_id=2038
 "Change the following line in desert.vim to the following,
-"hi Search cterm=NONE guibg=peru guifg=wheat
+hi Search cterm=NONE guibg=peru guifg=wheat
 
 
 "linuxcommands/vimrc end
@@ -44,4 +44,5 @@ augroup CustomIsKeyword
   autocmd!
   autocmd BufRead,BufNewFile *.jrnl setlocal iskeyword=@,48-57,-,:,[,]
 augroup END
+
 
