@@ -51,6 +51,26 @@ def find_ticket_in_path(path):
         return match.group(0)
     return None
 
+def get_ticket_from_git_branch():
+    """
+    Retrieve the Jira ticket number from the current Git branch name.
+
+    Returns:
+        str or None: The Jira ticket number if found, otherwise None.
+    """
+    try:
+        # Get the current Git branch name
+        with os.popen('git rev-parse --abbrev-ref HEAD') as branch:
+            branch_name = branch.read().strip()
+        # Regex pattern to match Jira ticket numbers (e.g., ASPEN-1001, AUTO-38095)
+        pattern = r"[A-Z]+-\d+"
+        match = re.search(pattern, branch_name)
+        if match:
+            return match.group(0)
+    except Exception as e:
+        print(f"Error retrieving Git branch: {e}")
+    return None
+
 def main():
     """
     Main function to handle command-line arguments and open the Jira ticket.
@@ -66,6 +86,11 @@ def main():
            such as "/home/user/projects/AUTO-38606_UpdateFirmwareGitlabJob",
            it will extract the ticket number (e.g., AUTO-38606) and open the corresponding
            Jira ticket URL: <JIRA_BASE_URL>/AUTO-38606
+
+        3. Extract the Jira ticket number from the current Git branch name:
+           If the script is run in a Git repository and the branch name contains a Jira ticket number
+           (e.g., feature/AUTO-12345), it will extract the ticket number (e.g., AUTO-12345) and open
+           the corresponding Jira ticket URL: <JIRA_BASE_URL>/AUTO-12345
 
         Notes:
         - If no ticket number is found in the current path and no argument is provided,
@@ -83,7 +108,10 @@ def main():
         current_path = os.getcwd()
         ticket_number = find_ticket_in_path(current_path)
         if not ticket_number:
-            print("No Jira ticket number found in the current path.")
+            # If no ticket number is found in the path, search in the Git branch name
+            ticket_number = get_ticket_from_git_branch()
+        if not ticket_number:
+            print("No Jira ticket number found in the current path or Git branch.")
             sys.exit(1)
 
     # Open the Jira ticket

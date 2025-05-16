@@ -21,6 +21,7 @@
 --ignore-dir=.git
 --ignore-dir=.ruff_cache
 --ignore-dir=.mypy_cache
+--ignore-dir=dist
 
 --ignore-file=ext:excludefromsearch
 
