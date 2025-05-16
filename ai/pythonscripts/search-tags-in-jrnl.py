@@ -1,6 +1,7 @@
 import subprocess
 import os
 
+# @todo : Currently only first line of the journal entry is printed. Print the line that contains the tag too to give better context.
 # Define the tags to search for and their order
 tags = ["@urgent", "@todo", "@track"]
 
