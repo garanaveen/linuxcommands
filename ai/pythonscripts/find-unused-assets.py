@@ -15,6 +15,37 @@ from pathlib import Path
 from typing import Set, List, Tuple
 
 
+def load_ignore_list(ignore_file_path: str) -> Set[str]:
+    """
+    Load list of asset names to ignore from a file.
+
+    Args:
+        ignore_file_path: Path to the file containing asset names to ignore
+
+    Returns:
+        Set of asset names to ignore
+    """
+    ignore_set = set()
+
+    if not ignore_file_path:
+        return ignore_set
+
+    try:
+        with open(ignore_file_path, 'r', encoding='utf-8') as f:
+            for line in f:
+                # Strip whitespace and skip empty lines and comments
+                asset_name = line.strip()
+                if asset_name and not asset_name.startswith('#'):
+                    ignore_set.add(asset_name)
+
+        print(f"Loaded {len(ignore_set)} assets to ignore from {ignore_file_path}")
+
+    except (IOError, OSError) as e:
+        print(f"Warning: Could not read ignore file {ignore_file_path}: {e}", file=sys.stderr)
+
+    return ignore_set
+
+
 def find_asset_files(assets_dir: str, extensions: List[str] = ['.png', '.webp']) -> List[str]:
     """
     Find all asset files with specified extensions in the given directory.
@@ -152,6 +183,7 @@ def main():
                        help='Show detailed information including where assets are used')
     parser.add_argument('--show-used', action='store_true',
                        help='Also show assets that are being used')
+    parser.add_argument('--ignore-files', help='File containing list of asset names to ignore')
 
     args = parser.parse_args()
 
@@ -174,6 +206,9 @@ def main():
     print(f"Extensions: {', '.join(args.extensions)}")
     print("-" * 60)
 
+    # Load ignore list
+    ignore_set = load_ignore_list(args.ignore_files)
+
     # Find all asset files
     asset_files = find_asset_files(assets_dir, args.extensions)
     print(f"Found {len(asset_files)} asset files")
@@ -190,6 +225,12 @@ def main():
     for i, asset_path in enumerate(asset_files, 1):
         if args.verbose:
             print(f"Checking asset {i}/{len(asset_files)}: {os.path.relpath(asset_path, project_root)}")
+
+        # Skip assets in the ignore list
+        if os.path.basename(asset_path) in ignore_set:
+            if args.verbose:
+                print(f"  ➔ Ignored (in ignore list)")
+            continue
 
         references = search_asset_references(asset_path, project_files, project_root)
 
