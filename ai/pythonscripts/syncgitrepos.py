@@ -28,7 +28,7 @@ def sync_repositories(repositories):
         repo_path = os.path.expanduser(repo_path)
 
         print(f"Checking repository: {repo_path}")
-        
+
         if check_unstaged_changes(repo_path):
             print(f"unstaged/uncommitted changes found in ****{repo_path}****")
             return
@@ -42,7 +42,7 @@ def sync_repositories(repositories):
         if outgoing_changes:
             print(f"Outgoing changes detected: in ****{repo_path}****")
             print(outgoing_changes)
-        
+
         print("Repository is in sync.\n")
 
 def read_repository_file(file_path):
