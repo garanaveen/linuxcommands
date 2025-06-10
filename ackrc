@@ -4,6 +4,7 @@
 #linuxcommands/ackrc start
 --type-set=ts=.ts
 --type-set=ts=.ts
+--type-set=md=.md
 --type-set=csv=.csv
 --type-set=txt=.txt
 --type-set=proto=.proto
