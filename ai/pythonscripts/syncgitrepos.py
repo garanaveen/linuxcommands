@@ -51,7 +51,7 @@ def read_repository_file(file_path):
         with open(file_path, 'r') as file:
             for line in file:
                 line = line.strip()
-                if line:
+                if line and not line.startswith("#"):  # Ignore comments
                     parts = line.split(',')
                     if len(parts) == 3:
                         repositories.append(parts)

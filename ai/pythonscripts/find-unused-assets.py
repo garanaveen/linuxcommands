@@ -1,10 +1,117 @@
 #!/usr/bin/env python3
 """
-Find unused assets in a project.
+Find Unused Assets Script
+=========================
 
-This script searches for .png and .webp files in a specified directory
-and checks if they are referenced anywhere in the project codebase.
-Unused assets are reported to help clean up the project.
+This script helps maintain clean codebases by identifying unused asset files
+(images, fonts, etc.) that are taking up space in your repository.
+
+OVERVIEW:
+---------
+The script scans a specified assets directory for files with given extensions
+(default: .png, .webp) and searches through your project's source code to
+determine if each asset is referenced. Any unreferenced assets are reported
+as "unused" and can be safely removed or marked as intentionally ignored.
+
+PERFECT FOR CI/CD:
+------------------
+This script is designed to integrate seamlessly with CI/CD pipelines:
+- Returns exit code 0 (success) when all assets are used
+- Returns exit code 1 (failure) when unused assets are found
+- Provides clear, actionable error messages for developers
+- Supports ignore files for intentionally unused assets
+
+USAGE EXAMPLES:
+---------------
+
+1. Basic usage - scan images directory:
+   python3 find-unused-assets.py ecosystem/images
+
+2. Scan with custom extensions:
+   python3 find-unused-assets.py ecosystem/images --extensions .png .jpg .svg .webp
+
+3. Use with ignore file:
+   python3 find-unused-assets.py ecosystem/images --ignore-files .unused-assets-ignore
+
+4. Verbose output showing where assets are used:
+   python3 find-unused-assets.py ecosystem/images --verbose --show-used
+
+5. Custom project root and exclude directories:
+   python3 find-unused-assets.py assets --project-root /path/to/project --exclude-dirs build dist node_modules
+
+IGNORE FILE FORMAT:
+-------------------
+Create a file (e.g., '.unused-assets-ignore') with asset filenames to ignore:
+
+    # This is a comment - lines starting with # are ignored
+    legacy-logo.png
+    placeholder-image.webp
+    backup-icon.png
+    # Another comment
+    old-banner.jpg
+
+GITLAB CI/CD INTEGRATION:
+-------------------------
+Add this job to your .gitlab-ci.yml:
+
+    check-unused-assets:
+      stage: test
+      image: python:3.9-slim
+      script:
+        - python3 scripts/find-unused-assets.py ecosystem/images --ignore-files .unused-assets-ignore
+      rules:
+        - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+        - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      allow_failure: false
+
+GITHUB ACTIONS INTEGRATION:
+---------------------------
+Add this to your .github/workflows/ci.yml:
+
+    - name: Check for unused assets
+      run: |
+        python3 scripts/find-unused-assets.py ecosystem/images --ignore-files .unused-assets-ignore
+
+JENKINS INTEGRATION:
+--------------------
+Add this to your Jenkinsfile:
+
+    stage('Check Unused Assets') {
+        steps {
+            sh 'python3 scripts/find-unused-assets.py ecosystem/images --ignore-files .unused-assets-ignore'
+        }
+    }
+
+SUPPORTED FILE TYPES:
+---------------------
+By default, the script searches these file types for asset references:
+- Source code: .brs, .js, .ts, .jsx, .tsx, .py, .sh, .bat
+- Markup: .xml, .html, .htm
+- Stylesheets: .css, .scss, .sass, .less
+- Config files: .json, .yaml, .yml, .cfg, .config, .properties
+- Documentation: .md, .txt
+- Build files: .mk, .makefile, Makefile, Dockerfile
+
+SEARCH PATTERNS:
+----------------
+The script searches for assets using multiple patterns:
+- Full relative path: images/icons/logo.png
+- Filename only: logo.png
+- Cross-platform paths: images\\icons\\logo.png (Windows) and images/icons/logo.png (Unix)
+- Framework-specific patterns: pkg:/images/icons/logo.png (Roku apps)
+
+EXIT CODES:
+-----------
+- 0: Success - No unused assets found
+- 1: Failure - Unused assets detected (triggers CI/CD failure)
+
+TROUBLESHOOTING:
+----------------
+If an asset is marked as unused but you know it's used:
+1. Check if it's dynamically referenced (string concatenation, variables)
+2. Add it to an ignore file
+3. Use --verbose to see what patterns are being searched
+4. Verify the asset path is correct relative to project root
 """
 
 import os
@@ -170,7 +277,20 @@ def search_asset_references(asset_path: str, project_files: List[str], project_r
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Find unused assets in a project')
+    parser = argparse.ArgumentParser(
+        description='Find unused assets in a project and report them for cleanup',
+        epilog='''
+Examples:
+  %(prog)s ecosystem/images
+  %(prog)s assets --extensions .png .jpg .svg
+  %(prog)s images --ignore-files .unused-assets-ignore --verbose
+
+Exit codes:
+  0 - Success: No unused assets found
+  1 - Failure: Unused assets detected (CI/CD will fail)
+        ''',
+        formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     parser.add_argument('assets_dir', help='Directory containing assets to check')
     parser.add_argument('--project-root', default='.',
                        help='Root directory of the project (default: current directory)')
