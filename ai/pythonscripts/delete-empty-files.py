@@ -10,13 +10,14 @@ import argparse
 from pathlib import Path
 
 
-def delete_empty_files(root_path, dry_run=False):
+def delete_empty_files(root_path, dry_run=False, verbose=False):
     """
     Recursively walk through directories and delete empty files.
 
     Args:
         root_path (str): Root directory to start the search
         dry_run (bool): If True, only show what would be deleted without actually deleting
+        verbose (bool): If True, show detailed output of all actions
 
     Returns:
         tuple: (files_deleted, total_files_checked)
@@ -34,8 +35,9 @@ def delete_empty_files(root_path, dry_run=False):
         return 0, 0
 
     print(f"Starting search in: {root_path}")
-    print(f"Dry run mode: {'ON' if dry_run else 'OFF'}")
-    print("-" * 60)
+    if verbose:
+        print(f"Dry run mode: {'ON' if dry_run else 'OFF'}")
+        print("-" * 60)
 
     try:
         # Walk through all directories and subdirectories
@@ -45,10 +47,12 @@ def delete_empty_files(root_path, dry_run=False):
             # Skip hidden directories (optional)
             dirs[:] = [d for d in dirs if not d.startswith('.')]
 
-            print(f"Checking directory: {current_dir_path}")
+            if verbose:
+                print(f"Checking directory: {current_dir_path}")
 
             if not files:
-                print(f"  No files in this directory")
+                if verbose:
+                    print(f"  No files in this directory")
                 continue
 
             for filename in files:
@@ -75,7 +79,8 @@ def delete_empty_files(root_path, dry_run=False):
                                 except OSError as e:
                                     print(f"  ✗ Error deleting {file_path}: {e}")
                         else:
-                            print(f"  File has content ({file_size} bytes): {file_path.name}")
+                            if verbose:
+                                print(f"  File has content ({file_size} bytes): {file_path.name}")
 
                 except (OSError, PermissionError) as e:
                     print(f"  ✗ Error accessing {file_path}: {e}")
@@ -96,7 +101,8 @@ def main():
 Examples:
   python delete-empty-files.py /path/to/directory
   python delete-empty-files.py . --dry-run
-  python delete-empty-files.py /home/user/documents
+  python delete-empty-files.py /home/user/documents --verbose
+  python delete-empty-files.py . --dry-run --verbose
         """
     )
 
@@ -113,6 +119,12 @@ Examples:
         help='Show what would be deleted without actually deleting files'
     )
 
+    parser.add_argument(
+        '--verbose',
+        action='store_true',
+        help='Show detailed output of all actions taken'
+    )
+
     args = parser.parse_args()
 
     print("=" * 60)
@@ -127,7 +139,7 @@ Examples:
             return
 
     # Execute the deletion
-    deleted_count, checked_count = delete_empty_files(args.path, args.dry_run)
+    deleted_count, checked_count = delete_empty_files(args.path, args.dry_run, args.verbose)
 
     # Summary
     print("-" * 60)
