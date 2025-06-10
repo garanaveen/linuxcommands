@@ -248,37 +248,63 @@ def main():
     print("=" * 60)
 
     if unused_assets:
-        print(f"\n🗑️  UNUSED ASSETS ({len(unused_assets)}):")
-        print("-" * 40)
+        print(f"\n❌ ERROR: Found {len(unused_assets)} unused asset(s):")
+        print("-" * 60)
         for asset in unused_assets:
             rel_path = os.path.relpath(asset, project_root)
-            print(f"  {rel_path}")
+            print(f"  • {rel_path}")
+
+        print("\n" + "⚠️  " + "=" * 58)
+        print("CI/CD PIPELINE FAILURE")
+        print("=" * 60)
+        print("This pipeline has failed because unused assets were detected.")
+        print("These assets are taking up space and should be removed or marked as ignored.")
+        print("\nTo resolve this issue, you have two options:")
+        print("\n1. DELETE the unused assets listed above from your repository")
+        print("\n2. CREATE an ignore file if these assets are intentionally unused:")
+        print("   • Create a file (e.g., '.unused-assets-ignore') containing asset names to ignore")
+        print("   • Add one asset filename per line (just the filename, not the full path)")
+        print("   • Lines starting with '#' are treated as comments")
+        print("   • Example ignore file content:")
+        print("     # This is a comment")
+        print("     legacy-logo.png")
+        print("     placeholder-image.webp")
+        print("     # Another comment")
+        print("     backup-icon.png")
+        print("   • Then run this script with: --ignore-files path/to/your/ignore/file")
+        print("\n" + "=" * 60)
     else:
-        print("\n✅ No unused assets found!")
+        print("\n✅ SUCCESS: No unused assets found!")
+        print("All assets in the specified directory are being used in the codebase.")
 
     if args.show_used and used_assets:
-        print(f"\n✅ USED ASSETS ({len(used_assets)}):")
+        print(f"\n📋 USED ASSETS ({len(used_assets)}):")
         print("-" * 40)
         for asset_path, references in used_assets:
             rel_path = os.path.relpath(asset_path, project_root)
-            print(f"  {rel_path} ({len(references)} reference(s))")
+            print(f"  • {rel_path} ({len(references)} reference(s))")
 
             if args.verbose:
                 for ref_file, line_num, line_content in references[:3]:  # Show first 3 references
                     ref_rel_path = os.path.relpath(ref_file, project_root)
-                    print(f"    {ref_rel_path}:{line_num} - {line_content[:80]}...")
+                    print(f"    └─ {ref_rel_path}:{line_num} - {line_content[:80]}...")
                 if len(references) > 3:
-                    print(f"    ... and {len(references) - 3} more reference(s)")
+                    print(f"    └─ ... and {len(references) - 3} more reference(s)")
 
-    print(f"\nSummary:")
-    print(f"  Total assets: {len(asset_files)}")
-    print(f"  Used assets: {len(used_assets)}")
-    print(f"  Unused assets: {len(unused_assets)}")
+    print(f"\n📊 SUMMARY:")
+    print(f"  • Total assets scanned: {len(asset_files)}")
+    print(f"  • Assets in use: {len(used_assets)}")
+    print(f"  • Unused assets: {len(unused_assets)}")
+    if ignore_set:
+        print(f"  • Assets ignored: {len(ignore_set)}")
 
-    # Exit with non-zero code if unused assets found
+    # Exit with non-zero code if unused assets found (CI/CD failure)
     if unused_assets:
+        print(f"\n🚨 CI/CD Pipeline Status: FAILED (exit code 1)")
+        print(f"   Reason: {len(unused_assets)} unused asset(s) detected")
         sys.exit(1)
     else:
+        print(f"\n✅ CI/CD Pipeline Status: PASSED (exit code 0)")
         sys.exit(0)
 
 
