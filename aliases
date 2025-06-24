@@ -84,5 +84,5 @@ alias soundtest='speaker-test --nperiods 10 --nloops 1'
 alias brsoverview='python3 ~/linuxcommands/ai/pythonscripts/brsoverview.py'
 
 
-
+#tail -f <most-recent-file> in the current directory. You can say something like "tailf1 | grep search.string"
 alias tailf1='tail -f `ls -tr | tail -1`'
