@@ -83,3 +83,6 @@ alias soundtest='speaker-test --nperiods 10 --nloops 1'
 
 alias brsoverview='python3 ~/linuxcommands/ai/pythonscripts/brsoverview.py'
 
+
+
+alias tailf1='tail -f `ls -tr | tail -1`'
