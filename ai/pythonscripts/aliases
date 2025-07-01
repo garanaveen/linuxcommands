@@ -3,4 +3,4 @@ alias vimgd='python3 $HOME/linuxcommands/ai/pythonscripts/vimgitdiff.py'
 alias abb='python3 $HOME/linuxcommands/ai/pythonscripts/abbreviation.py'
 alias jedit='python3 $HOME/linuxcommands/ai/pythonscripts/journal-edit.py'
 alias j='python3 $HOME/linuxcommands/ai/pythonscripts/open-jira-ticket.py'
-
+alias identify-large-brs-functions='python3 $HOME/linuxcommands/ai/pythonscripts/brs-size-functions.py'
