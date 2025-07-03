@@ -23,7 +23,13 @@ find . \
 
 if ! [[ -z ${FIRST_FILE_PATH} ]]; then
    FULLPATH=$(echo ${PWD}/${FIRST_FILE_PATH} | sed 's:\./::g')
-   echo ${FULLPATH} | xclip -selection clipboard
-   echo "\"${FULLPATH}\" copied to clipboard"
+   # Detect OS and use appropriate clipboard tool
+   if [[ "$(uname)" == "Darwin" ]]; then
+      echo "${FULLPATH}" | pbcopy
+      echo "\"${FULLPATH}\" copied to clipboard (macOS)"
+   else
+      echo "${FULLPATH}" | xclip -selection clipboard
+      echo "\"${FULLPATH}\" copied to clipboard (Linux)"
+   fi
 fi
 
