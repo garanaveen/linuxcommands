@@ -102,7 +102,11 @@ def main():
 
     # Check if a ticket number is provided as a command-line argument
     if len(sys.argv) > 1:
-        ticket_number = sys.argv[1]
+        # Extract Jira ticket number from the argument using regex
+        ticket_number = find_ticket_in_path(sys.argv[1])
+        if not ticket_number:
+            print(f"No Jira ticket number found in the argument: {sys.argv[1]}")
+            sys.exit(1)
     else:
         # If no argument is provided, search for a ticket number in the current path
         current_path = os.getcwd()
